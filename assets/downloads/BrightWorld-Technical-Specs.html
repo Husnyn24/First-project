@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightWorld LED – Technical Specifications Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#fff; color:#1a1a2e; line-height:1.6; }
+    .header { background:#0a84ff; padding:40px; color:#fff; }
+    .header-inner { max-width:900px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+    .brand { font-family:'Poppins',sans-serif; font-size:2rem; font-weight:900; }
+    .brand span { color:#f5c518; }
+    .doc-meta { text-align:right; font-size:0.82rem; color:rgba(255,255,255,0.8); }
+    .doc-meta strong { color:#f5c518; font-size:1rem; }
+    section { max-width:900px; margin:0 auto; padding:40px; }
+    h2 { font-family:'Poppins',sans-serif; font-size:1.3rem; font-weight:800; color:#0a84ff; border-bottom:2px solid #0a84ff; padding-bottom:8px; margin-bottom:20px; margin-top:36px; }
+    h3 { font-family:'Poppins',sans-serif; font-size:1.05rem; font-weight:700; color:#0d0f1a; margin:20px 0 10px; }
+    .spec-table { width:100%; border-collapse:collapse; margin-bottom:20px; font-size:0.85rem; }
+    .spec-table th { background:#f0f4ff; color:#0a84ff; font-weight:700; padding:10px 14px; text-align:left; border:1px solid #e0e8ff; }
+    .spec-table td { padding:10px 14px; border:1px solid #e0e8ff; }
+    .spec-table tr:nth-child(even) { background:#f8faff; }
+    .highlight-box { background:#f0f4ff; border-left:4px solid #0a84ff; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:20px; font-size:0.87rem; }
+    .highlight-box strong { color:#0a84ff; }
+    .warning-box { background:#fff8e1; border-left:4px solid #f5c518; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:20px; font-size:0.85rem; }
+    .warning-box strong { color:#d4a800; }
+    .cert-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; margin-bottom:20px; }
+    .cert-item { background:#f8faff; border:1px solid #e0e8ff; border-radius:10px; padding:14px; text-align:center; }
+    .cert-icon { font-size:1.8rem; margin-bottom:6px; }
+    .cert-label { font-size:0.78rem; font-weight:600; color:#0a84ff; }
+    .footer { background:#0d0f1a; color:rgba(255,255,255,0.6); text-align:center; padding:24px; font-size:0.82rem; }
+    .footer strong { color:#f5c518; }
+    .print-btn { position:fixed; bottom:30px; right:30px; background:linear-gradient(135deg,#0a84ff,#005ecb); color:#fff; border:none; border-radius:14px; padding:14px 24px; font-family:'Poppins',sans-serif; font-weight:700; font-size:0.9rem; cursor:pointer; box-shadow:0 8px 24px rgba(10,132,255,0.4); z-index:9999; }
+    @media print { .print-btn { display:none; } }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <div class="brand">Bright<span>World</span></div>
+      <div style="color:rgba(255,255,255,0.8);font-size:0.9rem;margin-top:4px;">Technical Specifications & Compliance Document</div>
+    </div>
+    <div class="doc-meta">
+      <strong>DOCX-2025-v3.1</strong><br>
+      Revision Date: July 2025<br>
+      Department: Technical Quality
+    </div>
+  </div>
+</div>
+
+<section>
+  <h2>1. General Standards & Compliance</h2>
+  <div class="highlight-box">
+    <strong>BrightWorld LED products</strong> comply with international quality and safety standards. All products are tested and certified before distribution to ensure energy efficiency, safety, and durability.
+  </div>
+  
+  <div class="cert-grid">
+    <div class="cert-item"><div class="cert-icon">🏅</div><div class="cert-label">CE Certified</div></div>
+    <div class="cert-item"><div class="cert-icon">🔬</div><div class="cert-label">RoHS Compliant</div></div>
+    <div class="cert-item"><div class="cert-icon">⚡</div><div class="cert-label">Energy Star</div></div>
+    <div class="cert-item"><div class="cert-icon">🛡️</div><div class="cert-label">IP65 Rated (Outdoor)</div></div>
+    <div class="cert-item"><div class="cert-icon">🌡️</div><div class="cert-icon">📋</div><div class="cert-label">ISO 9001:2015</div></div>
+  </div>
+
+  <h2>2. LED Bulb Technical Specifications</h2>
+  <h3>2.1 Standard LED Bulbs (E27 / B22 Base)</h3>
+  <table class="spec-table">
+    <thead><tr><th>Parameter</th><th>Min</th><th>Typical</th><th>Max</th><th>Unit</th></tr></thead>
+    <tbody>
+      <tr><td>Operating Voltage</td><td>200</td><td>220–240</td><td>265</td><td>V AC</td></tr>
+      <tr><td>Operating Frequency</td><td>50</td><td>50/60</td><td>60</td><td>Hz</td></tr>
+      <tr><td>Power Factor</td><td>0.90</td><td>0.95</td><td>1.00</td><td>—</td></tr>
+      <tr><td>Color Rendering Index (CRI)</td><td>80</td><td>85</td><td>95</td><td>Ra</td></tr>
+      <tr><td>Color Temperature (Warm)</td><td>2700</td><td>3000</td><td>3500</td><td>K</td></tr>
+      <tr><td>Color Temperature (Cool)</td><td>4000</td><td>4500</td><td>6500</td><td>K</td></tr>
+      <tr><td>Luminous Efficacy</td><td>90</td><td>100</td><td>120</td><td>lm/W</td></tr>
+      <tr><td>Operating Temperature</td><td>-20</td><td>25</td><td>45</td><td>°C</td></tr>
+      <tr><td>Lifetime (L70)</td><td>—</td><td>25,000</td><td>—</td><td>hours</td></tr>
+      <tr><td>Beam Angle</td><td>—</td><td>270°</td><td>—</td><td>degrees</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. Spot Light Technical Specifications</h2>
+  <h3>3.1 GU10 / MR16 LED Spot Lights</h3>
+  <table class="spec-table">
+    <thead><tr><th>Parameter</th><th>GU10 Specs</th><th>MR16 Specs</th><th>Unit</th></tr></thead>
+    <tbody>
+      <tr><td>Wattage Range</td><td>4–10W</td><td>4–8W</td><td>Watts</td></tr>
+      <tr><td>Input Voltage</td><td>220–240V AC</td><td>12V DC/AC</td><td>Volts</td></tr>
+      <tr><td>Beam Angle</td><td>36°–60°</td><td>36°–45°</td><td>degrees</td></tr>
+      <tr><td>Luminous Flux (7W)</td><td>560lm</td><td>500lm</td><td>lm</td></tr>
+      <tr><td>IP Rating</td><td>IP20</td><td>IP20</td><td>—</td></tr>
+      <tr><td>Lifetime</td><td>25,000h</td><td>25,000h</td><td>hours</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Smart LED Specifications</h2>
+  <div class="highlight-box">
+    <strong>Wi-Fi Requirements:</strong> 2.4 GHz Wi-Fi network required. Compatible with iOS 10+ and Android 5.0+. Supports Amazon Alexa and Google Home voice control.
+  </div>
+  <table class="spec-table">
+    <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+    <tbody>
+      <tr><td>Wireless Standard</td><td>IEEE 802.11 b/g/n (2.4 GHz)</td></tr>
+      <tr><td>Color Modes</td><td>RGB + Warm White + Cool White (RGBW)</td></tr>
+      <tr><td>Dimming Range</td><td>1% – 100% (via app/voice)</td></tr>
+      <tr><td>Color Temperature Range</td><td>2700K – 6500K (tunable)</td></tr>
+      <tr><td>Supported Protocols</td><td>Alexa, Google Home, SmartLife App</td></tr>
+      <tr><td>Control Methods</td><td>App, Voice, Scene, Timer, Music Sync</td></tr>
+      <tr><td>Response Time</td><td>&lt; 200ms</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Warranty & Replacement Policy</h2>
+  <div class="warning-box">
+    <strong>⚠️ Important:</strong> Warranty is void if the product shows signs of physical damage, improper installation, or use outside specified voltage ranges.
+  </div>
+  <table class="spec-table">
+    <thead><tr><th>Product Category</th><th>Warranty Period</th><th>Coverage</th></tr></thead>
+    <tbody>
+      <tr><td>Standard LED Bulbs</td><td>1 Year</td><td>Manufacturing defects</td></tr>
+      <tr><td>Premium LED Bulbs (Philips, Osram)</td><td>2 Years</td><td>Defects + lumen depreciation &gt;30%</td></tr>
+      <tr><td>Spot Lights & Downlights</td><td>2 Years</td><td>Manufacturing defects</td></tr>
+      <tr><td>Smart LED Products</td><td>1 Year Hardware + 6 months app</td><td>Hardware & connectivity defects</td></tr>
+      <tr><td>LED Strips & Decoration</td><td>6 Months</td><td>Manufacturing defects</td></tr>
+      <tr><td>Tube Lights & Battens</td><td>2 Years</td><td>Manufacturing defects</td></tr>
+      <tr><td>Flood & Outdoor Lights (IP65+)</td><td>3 Years</td><td>Full coverage incl. weathering</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. Installation Guidelines</h2>
+  <ul style="font-size:0.87rem;color:#4a5568;padding-left:20px;line-height:2;">
+    <li>Ensure power is switched off before installation</li>
+    <li>Verify supply voltage matches product rating (220–240V)</li>
+    <li>Do not exceed maximum wattage for fixtures</li>
+    <li>For outdoor products, ensure proper IP rating for weather exposure</li>
+    <li>Smart bulbs require 2.4GHz Wi-Fi – 5GHz not supported</li>
+    <li>Maintain minimum 10cm clearance around bulbs for heat dissipation</li>
+    <li>Contact BrightWorld for professional installation service</li>
+  </ul>
+</section>
+
+<div class="footer">
+  <p> 123 Gulberg Main Boulevard, Lahore &nbsp;|&nbsp;  <strong>+92 318 616 7543</strong> &nbsp;|&nbsp;  husnyn24@gmail.com</p>
+  <p style="margin-top:8px;"><strong>BrightWorld LED Lights © 2025</strong> – Document Version 3.1 – For internal and customer reference only</p>
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save as DOC</button>
+
+</body>
+</html>

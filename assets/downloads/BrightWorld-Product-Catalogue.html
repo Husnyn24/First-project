@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightWorld LED – Product Catalogue 2025</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0d0f1a;
+      color: #f0f4ff;
+    }
+
+    .cover {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0c15 0%, #0d1a3a 50%, #1a0a35 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .brand {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .brand span {
+      color: #f5c518;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(10, 132, 255, 0.15);
+      border: 1px solid rgba(10, 132, 255, 0.3);
+      color: #3da3ff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 20px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .sub {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.1rem;
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .info-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .info-item .num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #f5c518;
+    }
+
+    .info-item .label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    section {
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    h2 span {
+      color: #0a84ff;
+    }
+
+    .section-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #0a84ff, #f5c518);
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .product-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .product-item .brand-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #0a84ff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .product-item h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .product-item .specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .spec {
+      background: rgba(10, 132, 255, 0.1);
+      border: 1px solid rgba(10, 132, 255, 0.2);
+      color: #3da3ff;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+
+    .product-item .price {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #f5c518;
+    }
+
+    .contact-bar {
+      background: linear-gradient(135deg, #0a84ff, #005ecb);
+      padding: 40px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .contact-bar h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact-bar p {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 6px;
+    }
+
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #f5c518, #d4a800);
+      color: #0d0f1a;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 24px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(245, 197, 24, 0.4);
+      z-index: 9999;
+    }
+
+    .print-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    @media print {
+      .print-btn {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+        color: #000;
+      }
+
+      .cover {
+        background: #0d0f1a;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cover">
+    <div class="brand">Bright<span>World</span></div>
+    <div class="tag"> Premium LED Lighting Solutions</div>
+    <div class="title">Product Catalogue 2025</div>
+    <div class="sub">Pakistan's most trusted LED lighting store – quality assured, energy-saving, and long-lasting
+      solutions.</div>
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="num">500+</div>
+        <div class="label">Products</div>
+      </div>
+      <div class="info-item">
+        <div class="num">10+</div>
+        <div class="label">Brand Partners</div>
+      </div>
+      <div class="info-item">
+        <div class="num">3 Yr</div>
+        <div class="label">Warranty</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2>LED <span>Bulbs</span></h2>
+    <div class="section-line"></div>
+    <div class="product-grid">
+      <div class="product-item">
+        <div class="brand-label">Philips</div>
+        <h4>Philips LED Bulb 9W Warm White E27</h4>
+        <div class="specs"><span class="spec">9W</span><span class="spec">2700K</span><span
+            class="spec">810lm</span><span class="spec">E27</span></div>
+        <div class="price">₨ 299 <small style="color:#8892b0;text-decoration:line-through;font-size:0.8rem;">₨
+            375</small></div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Osram</div>
+        <h4>Osram LED Classic 12W Cool Daylight</h4>
+        <div class="specs"><span class="spec">12W</span><span class="spec">6500K</span><span
+            class="spec">1200lm</span><span class="spec">E27</span></div>
+        <div class="price">₨ 450</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Havells</div>
+        <h4>Havells LED Globe 15W E27 Warm White</h4>
+        <div class="specs"><span class="spec">15W</span><span class="spec">3000K</span><span
+            class="spec">1350lm</span><span class="spec">E27</span></div>
+        <div class="price">₨ 599</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Wipro</div>
+        <h4>Wipro LED 7W Natural White E27</h4>
+        <div class="specs"><span class="spec">7W</span><span class="spec">4000K</span><span
+            class="spec">630lm</span><span class="spec">E27</span></div>
+        <div class="price">₨ 249</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Bajaj</div>
+        <h4>Bajaj LED 10W Warm Glow Dimmable E27</h4>
+        <div class="specs"><span class="spec">10W</span><span class="spec">2700K</span><span
+            class="spec">900lm</span><span class="spec">Dimmable</span></div>
+        <div class="price">₨ 399</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Crompton</div>
+        <h4>Crompton LED 5W Cool Daylight B22</h4>
+        <div class="specs"><span class="spec">5W</span><span class="spec">6500K</span><span
+            class="spec">425lm</span><span class="spec">B22</span></div>
+        <div class="price">₨ 199 <small style="color:#8892b0;text-decoration:line-through;font-size:0.8rem;">₨
+            265</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Spot <span>Lights</span></h2>
+    <div class="section-line"></div>
+    <div class="product-grid">
+      <div class="product-item">
+        <div class="brand-label">Osram</div>
+        <h4>Osram LED Spot 7W Daylight GU10</h4>
+        <div class="specs"><span class="spec">7W</span><span class="spec">6500K</span><span
+            class="spec">550lm</span><span class="spec">GU10</span></div>
+        <div class="price">₨ 850 <small style="color:#8892b0;text-decoration:line-through;font-size:0.8rem;">₨
+            1000</small></div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Philips</div>
+        <h4>Philips LED Track Light 5W Adjustable</h4>
+        <div class="specs"><span class="spec">5W</span><span class="spec">4000K</span><span
+            class="spec">400lm</span><span class="spec">GU10</span></div>
+        <div class="price">₨ 750</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Syska</div>
+        <h4>Syska LED MR16 Spot 7W 12V Warm</h4>
+        <div class="specs"><span class="spec">7W</span><span class="spec">3000K</span><span
+            class="spec">600lm</span><span class="spec">MR16</span></div>
+        <div class="price">₨ 680</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Wipro</div>
+        <h4>Wipro LED Recessed Spot 10W Square</h4>
+        <div class="specs"><span class="spec">10W</span><span class="spec">4000K</span><span
+            class="spec">900lm</span><span class="spec">Recessed</span></div>
+        <div class="price">₨ 1100</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Havells</div>
+        <h4>Havells LED COB Spot 15W 230V</h4>
+        <div class="specs"><span class="spec">15W</span><span class="spec">5000K</span><span
+            class="spec">1350lm</span><span class="spec">COB</span></div>
+        <div class="price">₨ 1350</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Panasonic</div>
+        <h4>Panasonic LED Downlight 12W Round Warm</h4>
+        <div class="specs"><span class="spec">12W</span><span class="spec">3000K</span><span
+            class="spec">IP44</span><span class="spec">Round</span></div>
+        <div class="price">₨ 1199</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Smart & <span>Decoration Lights</span></h2>
+    <div class="section-line"></div>
+    <div class="product-grid">
+      <div class="product-item">
+        <div class="brand-label">Syska</div>
+        <h4>Syska Smart Wi-Fi LED Bulb 10W RGB</h4>
+        <div class="specs"><span class="spec">10W</span><span class="spec">RGB+W</span><span
+            class="spec">Wi-Fi</span><span class="spec">App</span></div>
+        <div class="price">₨ 1,499 <small style="color:#8892b0;text-decoration:line-through;font-size:0.8rem;">₨
+            1,800</small></div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Havells</div>
+        <h4>Havells LED String Fairy Lights 10M RGB</h4>
+        <div class="specs"><span class="spec">5W</span><span class="spec">Multi</span><span class="spec">10m</span><span
+            class="spec">IP44</span></div>
+        <div class="price">₨ 699 <small style="color:#8892b0;text-decoration:line-through;font-size:0.8rem;">₨
+            999</small></div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Orient</div>
+        <h4>Orient Smart LED Strip 5m RGB Wi-Fi</h4>
+        <div class="specs"><span class="spec">15W</span><span class="spec">RGB</span><span class="spec">5m</span><span
+            class="spec">Wi-Fi</span></div>
+        <div class="price">₨ 3,499</div>
+      </div>
+      <div class="product-item">
+        <div class="brand-label">Syska</div>
+        <h4>Syska LED Neon Flex Strip 3m Multicolor</h4>
+        <div class="specs"><span class="spec">12W</span><span class="spec">Neon</span><span
+            class="spec">IP65</span><span class="spec">3m</span></div>
+        <div class="price">₨ 1,299</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-bar">
+    <h3> Contact BrightWorld</h3>
+    <p> 123 Gulberg Main Boulevard, Lahore</p>
+    <p> +92 318 616 7543</p>
+    <p> husnyn24@gmail.com</p>
+    <p> Mon–Sat: 9:00 AM – 10:00 PM</p>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+</body>
+
+</html>

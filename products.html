@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Shop BrightWorld LED Products  LED Bulbs, Spot Lights, Decoration Lights, Smart Lights, Tube Lights, Ceiling Lights from top brands like Philips, Osram, Havells." />
+  <title>Products  BrightWorld LED Lights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Loading -->
+  <div id="loading-screen">
+    <div class="loader-logo">Bright<span>World</span></div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- Top Bar -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <div class="d-flex align-items-center gap-4"><a href="mailto:info@brightworldled.com"><i
+              class="bi bi-envelope-fill me-1"></i>husnyn24@gmail.com</a><a href="tel:+923001234567"><i
+              class="bi bi-telephone-fill me-1"></i>+92 318 616 7543</a><span class="store-timing"><i
+              class="bi bi-clock-fill me-1"></i>Mon - Sat : 9AM - 10PM</span></div>
+        <div class="social-icons d-flex gap-1"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+              class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+              class="bi bi-whatsapp"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-icon"><i class="bi bi-lightbulb-fill text-white"></i></div>Bright<span
+          class="brand-world">World</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="dark-toggle" id="dark-toggle-mobile" aria-label="Toggle theme"><i
+            class="bi bi-sun-fill"></i></button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav"><i
+            class="bi bi-list text-white fs-5"></i></button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarShopDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarShopDropdown">
+              <li><a class="dropdown-item" href="products.html">Products</a></li>
+              <li><a class="dropdown-item" href="brands.html">Brands</a></li>
+              <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="download.html">Downloads</a></li>
+            </ul>
+          </li>
+          <!-- Company Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCompanyDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Company
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCompanyDropdown">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+            </ul>
+          </li>
+          <!-- Support Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarSupportDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Support
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarSupportDropdown">
+              <li><a class="dropdown-item" href="queries.html">Queries &amp; FAQ</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <button class="dark-toggle" id="dark-toggle" aria-label="Toggle theme"><i class="bi bi-sun-fill"></i></button>
+          <a href="cart.html" class="btn-primary-grad btn btn-sm px-3 py-2"><i class="bi bi-cart3"></i> <span>Cart</span> <span
+              class="badge bg-warning text-dark ms-1 rounded-pill" id="cart-count" style="font-size:0.7rem">0</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Offcanvas -->
+  <div class="offcanvas offcanvas-start" id="mobileNav" tabindex="-1">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Bright<span style="color:var(--accent)">World</span></h5><button type="button"
+        class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav gap-1">
+        <li><a class="nav-link" href="index.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-house-fill me-2"></i>Home</a></li>
+        <li><a class="nav-link" href="products.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-grid-fill me-2"></i>Products</a></li>
+        <li><a class="nav-link" href="brands.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-award-fill me-2"></i>Brands</a></li>
+        <li><a class="nav-link" href="gallery.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-images me-2"></i>Gallery</a></li>
+        <li><a class="nav-link" href="about.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-info-circle-fill me-2"></i>About Us</a></li>
+        <li><a class="nav-link" href="queries.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-question-circle-fill me-2"></i>Queries</a></li>
+        <li><a class="nav-link" href="feedback.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-chat-fill me-2"></i>Feedback</a></li>
+        <li><a class="nav-link" href="contact.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-geo-alt-fill me-2"></i>Contact</a></li>
+        <li><a class="nav-link" href="sitemap.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-diagram-3-fill me-2"></i>Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Products</li>
+        </ol>
+      </nav>
+      <h1 class="section-title text-white mt-2">Our <span class="grad">Product Range</span></h1>
+      <p class="section-sub">Explore 500+ premium LED products across 6 major categories.</p>
+    </div>
+  </div>
+
+  <!-- Brand Logos Ticker Strip -->
+  <div style="padding:16px 0;overflow:hidden;background:var(--dark-card);border-bottom:1px solid var(--border);">
+    <div style="overflow:hidden;position:relative;">
+      <div style="display:flex;gap:32px;align-items:center;width:max-content;animation:tickerScroll 28s linear infinite;">
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 70" width="138" height="42"><ellipse cx="22" cy="17" rx="8" ry="10" fill="#0a84ff" opacity="0.85"/><ellipse cx="22" cy="35" rx="8" ry="10" fill="#0a84ff" opacity="0.85"/><ellipse cx="22" cy="53" rx="8" ry="10" fill="#0a84ff" opacity="0.85"/><text x="137" y="45" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="28" fill="#0a84ff" letter-spacing="0">PHILIPS</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" width="120" height="42"><circle cx="22" cy="35" r="20" fill="#f5c518"/><circle cx="22" cy="35" r="13" fill="#1a1a2e"/><text x="120" y="45" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="28" fill="#f5c518" letter-spacing="1">SRAM</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="130" height="40">
+          <text x="15" y="43" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="-1.5">H</text>
+          <polygon points="56,17 43,43 69,43" fill="#ef4444" />
+          <text x="76" y="43" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="-1.5">VELLS</text>
+        </svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 60" width="108" height="38"><circle cx="16" cy="30" r="12" fill="none" stroke="#22c55e" stroke-width="3"/><circle cx="16" cy="30" r="5" fill="#22c55e"/><text x="100" y="41" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="28" fill="#22c55e">WIPRO</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 60" width="96" height="38"><text x="77" y="41" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="30" fill="#a78bfa" letter-spacing="2">SYSKA</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 60" width="96" height="38"><rect x="4" y="13" width="32" height="34" rx="3" fill="#06b6d4" opacity="0.12" stroke="#06b6d4" stroke-width="1.5"/><text x="8" y="38" font-family="Arial Black,Arial" font-weight="900" font-size="16" fill="#06b6d4">B</text><text x="42" y="41" font-family="Arial Black,Arial" font-weight="900" font-size="26" fill="#06b6d4">BAJAJ</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" width="148" height="42"><circle cx="35" cy="35" r="20" fill="none" stroke="#005691" stroke-width="2" opacity="0.3" /><path d="M46,24 A15,15 0 1,0 46,46" fill="none" stroke="#005691" stroke-width="4.5" stroke-linecap="round" /><text x="142" y="44" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="22" fill="#005691" letter-spacing="1">CROMPTON</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 60" width="110" height="38"><circle cx="17" cy="30" r="14" fill="none" stroke="#ec4899" stroke-width="2"/><ellipse cx="17" cy="30" rx="7" ry="14" fill="none" stroke="#ec4899" stroke-width="1.5" opacity="0.5"/><text x="107" y="41" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="26" fill="#ec4899">ORIENT</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 60" width="140" height="38"><circle cx="16" cy="30" r="12" fill="#0ea5e9" opacity="0.12" stroke="#0ea5e9" stroke-width="1.5"/><text x="7" y="37" font-family="Arial Black,Arial" font-weight="900" font-size="15" fill="#0ea5e9">P</text><text x="36" y="41" font-family="Arial Black,Arial" font-weight="900" font-size="18" fill="#0ea5e9">PANASONIC</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 60" width="130" height="38"><rect x="4" y="16" width="24" height="25" rx="3" fill="none" stroke="#84cc16" stroke-width="2"/><rect x="28" y="22" width="4" height="13" rx="2" fill="#84cc16"/><text x="125" y="41" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="18" fill="#84cc16">EVEREADY</text></svg></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 70" width="138" height="42"><ellipse cx="22" cy="17" rx="8" ry="10" fill="#0a84ff" opacity="0.85"/><ellipse cx="22" cy="35" rx="8" ry="10" fill="#0a84ff" opacity="0.85"/><ellipse cx="22" cy="53" rx="8" ry="10" fill="#0a84ff" opacity="0.85"/><text x="137" y="45" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="28" fill="#0a84ff" letter-spacing="0">PHILIPS</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" width="120" height="42"><circle cx="22" cy="35" r="20" fill="#f5c518"/><circle cx="22" cy="35" r="13" fill="#1a1a2e"/><text x="120" y="45" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="28" fill="#f5c518" letter-spacing="1">SRAM</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="130" height="40">
+          <text x="15" y="43" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="-1.5">H</text>
+          <polygon points="56,17 43,43 69,43" fill="#ef4444" />
+          <text x="76" y="43" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="-1.5">VELLS</text>
+        </svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 60" width="108" height="38"><circle cx="16" cy="30" r="12" fill="none" stroke="#22c55e" stroke-width="3"/><circle cx="16" cy="30" r="5" fill="#22c55e"/><text x="100" y="41" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="28" fill="#22c55e">WIPRO</text></svg></div>
+        <div class="ticker-brand-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 155 60" width="96" height="38"><text x="77" y="41" text-anchor="middle" font-family="Arial Black,Arial" font-weight="900" font-size="30" fill="#a78bfa" letter-spacing="2">SYSKA</text></svg></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search, Filter & Sort Bar -->
+  <div class="bg-surface py-4 sticky-top" style="top:70px;z-index:900;border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-4">
+          <div class="input-group">
+            <span class="input-group-text"
+              style="background:var(--surface);border:1px solid var(--border);border-right:none;color:var(--text-muted);border-radius:10px 0 0 10px;"><i
+                class="bi bi-search"></i></span>
+            <input type="text" id="product-search" class="form-control" placeholder="Search products..."
+              style="border-left:none;border-radius:0 10px 10px 0;" />
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="d-flex flex-wrap gap-2">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="bulbs">Bulbs</button>
+            <button class="filter-btn" data-filter="spotlights">Spot</button>
+            <button class="filter-btn" data-filter="decoration">Decor</button>
+            <button class="filter-btn" data-filter="smart">Smart</button>
+          
+          </div>
+        </div>
+        <div class="col-md-3">
+          <select id="sort-select" class="form-select">
+            <option value="">Sort By</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Grid -->
+
+  <section class="bg-dark-custom">
+    <div class="container">
+  
+      <!-- LED Bulbs Section -->
+      <div id="bulbs" class="mb-5">
+        <div class="d-flex align-items-center gap-3 mb-4" data-aos="fade-up">
+          <div style="width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <div>
+            <h2 style="font-family:var(--font-heading);font-weight:800;margin:0;font-size:1.5rem;">LED Bulbs</h2>
+            <p style="color:var(--text-muted);margin:0;font-size:0.85rem;">Standard, decorative &amp; specialty bulbs</p>
+          </div>
+        </div>
+        
+        <div class="row g-4" id="products-grid">
+          <!-- Bulb 1 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="299" data-aos="fade-up">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/BULBS/Philips LED 9W Warm White E27.png" alt="Philips LED 9W Warm White E27" class="img-fluid">
+                <span class="badge-discount">20% OFF</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Philips</div>
+                <div class="product-name">Philips LED 9W Warm White E27</div>
+                <div class="specs"><span class="spec-pill">9W</span><span class="spec-pill">2700K</span><span class="spec-pill">E27</span><span class="spec-pill">810lm</span><span class="spec-pill">25,000h</span></div>
+                <div class="price-row"><span class="price-current">&#8360;299</span><span class="price-old">&#8360;375</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;" data-bs-toggle="modal" data-bs-target="#productModal"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bulb 2 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="349" data-aos="fade-up" data-aos-delay="60">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/BULBS/Osram LED Classic 12W Cool Daylight.png" alt="Osram LED Classic 12W" class="img-fluid">
+                <span class="badge-new">New</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Osram</div>
+                <div class="product-name">Osram LED Classic 12W Cool Daylight</div>
+                <div class="specs"><span class="spec-pill">12W</span><span class="spec-pill">6500K</span><span class="spec-pill">B22</span><span class="spec-pill">1200lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;349</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bulb 3 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="199" data-aos="fade-up" data-aos-delay="120">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/BULBS/Crompton LED 5W Cool Daylight B22.png" alt="Crompton LED 5W" class="img-fluid">
+                <span class="badge-discount">25% OFF</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Crompton</div>
+                <div class="product-name">Crompton LED 5W Cool Daylight B22</div>
+                <div class="specs"><span class="spec-pill">5W</span><span class="spec-pill">6500K</span><span class="spec-pill">B22</span><span class="spec-pill">425lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;199</span><span class="price-old">&#8360;265</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bulb 4 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="450" data-aos="fade-up" data-aos-delay="180">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/BULBS/Havells LED Globe 15W E27 Warm White.png" alt="Havells LED Globe 15W" class="img-fluid">
+                <span class="badge-new">Popular</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Havells</div>
+                <div class="product-name">Havells LED Globe 15W E27 Warm White</div>
+                <div class="specs"><span class="spec-pill">15W</span><span class="spec-pill">3000K</span><span class="spec-pill">E27</span><span class="spec-pill">1350lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;450</span><span class="price-old">&#8360;550</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bulb 5 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="275" data-aos="fade-up" data-aos-delay="240">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/BULBS/Wipro LED 7W Natural White E27.png" alt="Wipro LED 7W" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Wipro</div>
+                <div class="product-name">Wipro LED 7W Natural White E27</div>
+                <div class="specs"><span class="spec-pill">7W</span><span class="spec-pill">4000K</span><span class="spec-pill">E27</span><span class="spec-pill">630lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;275</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bulb 6 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="320" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/BULBS/Bajaj LED 10W Warm Glow Dimmable E27.png" alt="Bajaj LED 10W" class="img-fluid">
+                <span class="badge-discount">10% OFF</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Bajaj</div>
+                <div class="product-name">Bajaj LED 10W Warm Glow Dimmable E27</div>
+                <div class="specs"><span class="spec-pill">10W</span><span class="spec-pill">2200K</span><span class="spec-pill">Dimmable</span><span class="spec-pill">900lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;320</span><span class="price-old">&#8360;355</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bulb 7 (Eveready) -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="bulbs" data-price="399" data-aos="fade-up" data-aos-delay="360">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/Gallery/office tube light installation.png" alt="Eveready LED Batten 14W" class="img-fluid">
+                <span class="badge-discount">20% OFF</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Eveready</div>
+                <div class="product-name">Eveready LED Batten 14W Warm T8 2ft</div>
+                <div class="specs"><span class="spec-pill">14W</span><span class="spec-pill">4000K</span><span class="spec-pill">2ft</span><span class="spec-pill">1200lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;399</span><span class="price-old">&#8360;499</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Spot Lights Section -->
+          <div class="col-12 mt-4" id="spotlights" data-aos="fade-up">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#d97706,#b45309);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;">
+                <i class="bi bi-spotlight-fill"></i>
+              </div>
+              <div>
+                <h2 style="font-family:var(--font-heading);font-weight:800;margin:0;font-size:1.5rem;">Spot Lights</h2>
+                <p style="color:var(--text-muted);margin:0;font-size:0.85rem;">Directional &amp; accent lighting solutions</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Spot 1 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="spotlights" data-price="850" data-aos="fade-up">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/SPOT LIGHTS/Osram LED Spot 7W Daylight GU10 (1).jpg" alt="Osram LED Spot" class="img-fluid">
+                <span class="badge-discount">15% OFF</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Osram</div>
+                <div class="product-name">Osram LED Spot 7W Daylight GU10</div>
+                <div class="specs"><span class="spec-pill">7W</span><span class="spec-pill">6500K</span><span class="spec-pill">GU10</span><span class="spec-pill">560lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;850</span><span class="price-old">&#8360;1000</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Spot 2 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="spotlights" data-price="1199" data-aos="fade-up" data-aos-delay="60">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/SPOT LIGHTS/Panasonic LED Downlight 12W Round Warm.png" alt="Panasonic LED Downlight" class="img-fluid">
+                <span class="badge-new">New</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Panasonic</div>
+                <div class="product-name">Panasonic LED Downlight 12W Round Warm</div>
+                <div class="specs"><span class="spec-pill">12W</span><span class="spec-pill">3000K</span><span class="spec-pill">IP44</span><span class="spec-pill">950lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;1,199</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Spot 3 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="spotlights" data-price="750" data-aos="fade-up" data-aos-delay="120">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/SPOT LIGHTS/Philips LED Track Light 5W Adjustable.png" alt="Philips LED Track Light" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Philips</div>
+                <div class="product-name">Philips LED Track Light 5W Adjustable</div>
+                <div class="specs"><span class="spec-pill">5W</span><span class="spec-pill">4000K</span><span class="spec-pill">Track</span></div>
+                <div class="price-row"><span class="price-current">&#8360;750</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Spot 4 (Syska) -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="spotlights" data-price="680" data-aos="fade-up" data-aos-delay="180">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/SPOT LIGHTS/Syska LED MR16 Spot 7W 12V Warm.png" alt="Syska LED MR16 Spot" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Syska</div>
+                <div class="product-name">Syska LED MR16 Spot 7W 12V Warm</div>
+                <div class="specs"><span class="spec-pill">7W</span><span class="spec-pill">3000K</span><span class="spec-pill">MR16</span><span class="spec-pill">600lm</span></div>
+                <div class="price-row"><span class="price-current">&#8360;680</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Decoration Section -->
+          <div class="col-12 mt-4" id="decoration" data-aos="fade-up">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#7c3aed,#a855f7);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;">
+                <i class="bi bi-stars"></i>
+              </div>
+              <div>
+                <h2 style="font-family:var(--font-heading);font-weight:800;margin:0;font-size:1.5rem;">Decoration Lights</h2>
+                <p style="color:var(--text-muted);margin:0;font-size:0.85rem;">Fairy lights, strips, neon &amp; festive</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Decoration 1 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="decoration" data-price="699" data-aos="fade-up">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/Home/Decoration Lights.avif" alt="Havells Fairy Lights" class="img-fluid">
+                <span class="badge-discount">30% OFF</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Havells</div>
+                <div class="product-name">Havells LED String Fairy Lights 10M RGB</div>
+                <div class="specs"><span class="spec-pill">5W</span><span class="spec-pill">10m</span><span class="spec-pill">100 LEDs</span></div>
+                <div class="price-row"><span class="price-current">&#8360;699</span><span class="price-old">&#8360;999</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decoration 2 (Orient) -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="decoration" data-price="3499" data-aos="fade-up" data-aos-delay="60">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/Gallery/RGB Fairy Light Decoration.png" alt="Orient Smart LED Strip" class="img-fluid">
+                <span class="badge-new">Smart</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Orient</div>
+                <div class="product-name">Orient Smart LED Strip 5m RGB Wi-Fi</div>
+                <div class="specs"><span class="spec-pill">15W</span><span class="spec-pill">RGB</span><span class="spec-pill">5m</span><span class="spec-pill">Wi-Fi</span></div>
+                <div class="price-row"><span class="price-current">&#8360;3,499</span><span class="price-old">&#8360;3,888</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Smart Lights Section -->
+          <div class="col-12 mt-4" id="smart" data-aos="fade-up">
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#059669,#10b981);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:white;">
+                <i class="bi bi-cpu-fill"></i>
+              </div>
+              <div>
+                <h2 style="font-family:var(--font-heading);font-weight:800;margin:0;font-size:1.5rem;">Smart Lights</h2>
+                <p style="color:var(--text-muted);margin:0;font-size:0.85rem;">Wi-Fi, Bluetooth &amp; voice-controlled</p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Smart Light 1 -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="smart" data-price="1499" data-aos="fade-up">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/Home/Smart Lights.jpg" alt="Smart Light" class="img-fluid">
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Wipro</div>
+                <div class="product-name">Wipro Smart LED Bulb 9W RGB</div>
+                <div class="specs"><span class="spec-pill">9W</span><span class="spec-pill">RGB+W</span><span class="spec-pill">Wi-Fi</span></div>
+                <div class="price-row"><span class="price-current">&#8360;1,499</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Smart Light 2 (Syska) -->
+          <div class="col-6 col-md-4 col-lg-3 filter-item" data-category="smart" data-price="1499" data-aos="fade-up" data-aos-delay="60">
+            <div class="product-card" data-product>
+              <div class="img-wrap">
+                <img src="assets/img/Gallery/Complete Smart Home LED Setup.png" alt="Syska Smart Wi-Fi LED Bulb" class="img-fluid">
+                <span class="badge-new">Bestseller</span>
+              </div>
+              <div class="card-body">
+                <div class="product-brand">Syska</div>
+                <div class="product-name">Syska Smart Wi-Fi LED Bulb 10W RGB</div>
+                <div class="specs"><span class="spec-pill">10W</span><span class="spec-pill">RGB+W</span><span class="spec-pill">Wi-Fi</span></div>
+                <div class="price-row"><span class="price-current">&#8360;1,499</span><span class="price-old">&#8360;1,800</span></div>
+                <div class="card-actions"><button class="btn-primary-grad btn btn-sm flex-grow-1 add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to Cart</span></button><a href="#" class="btn btn-sm" style="background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-main);border-radius:10px;"><i class="bi bi-eye"></i></a></div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Product Detail Modal -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="background:var(--dark-card);border:1px solid var(--border);">
+        <div class="modal-header" style="border-bottom:1px solid var(--border);">
+          <h5 class="modal-title" style="font-family:var(--font-heading);font-weight:700;">Product Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="filter:invert(1);"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-4">
+            <div class="col-md-5">
+              <div
+                style="height:250px;background:linear-gradient(135deg,#0a1a2e,#0d2a4a);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:8rem;color:rgba(10,132,255,0.5);">
+                <i class="bi bi-lightbulb-fill"></i>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="product-brand">Philips</div>
+              <h4 style="font-family:var(--font-heading);font-weight:700;margin:6px 0 16px;">Philips LED Bulb 9W Warm
+                White E27</h4>
+              <table class="table table-sm" style="color:var(--text-muted);font-size:0.85rem;">
+                <tbody>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Brand</td>
+                    <td>Philips</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Power</td>
+                    <td>9W</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Voltage</td>
+                    <td>220-240V</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Color Temp</td>
+                    <td>2700K Warm White</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Lumens</td>
+                    <td>810 lm</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Lifespan</td>
+                    <td>25,000 hours</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Base</td>
+                    <td>E27 (Edison Screw)</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Warranty</td>
+                    <td>2 Years</td>
+                  </tr>
+                  <tr>
+                    <td style="color:var(--text-main);font-weight:600;">Availability</td>
+                    <td><span style="color:#22c55e;">In Stock</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="price-row"><span class="price-current">&#8360;299</span><span
+                  class="price-old">&#8360;375</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:1px solid var(--border);">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn-primary-grad btn add-to-cart"><i class="bi bi-cart-plus"></i> <span>Add to
+              Cart</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-0">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand mb-3">Bright<span>World</span></div>
+          <p class="footer-about">Pakistan's most trusted LED lighting store with 15+ years of excellence.</p>
+          <div class="footer-social d-flex gap-2 mt-3"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+                class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+                class="bi bi-whatsapp"></i></a></div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right"></i>Products</a></li>
+            <li><a href="brands.html"><i class="bi bi-chevron-right"></i>Brands</a></li>
+            <li><a href="gallery.html"><i class="bi bi-chevron-right"></i>Gallery</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i>About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="queries.html"><i class="bi bi-chevron-right"></i>FAQ</a></li>
+            <li><a href="feedback.html"><i class="bi bi-chevron-right"></i>Feedback</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact Us</a></li>
+            <li><a href="download.html"><i class="bi bi-chevron-right"></i>Downloads</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-geo-alt-fill"></i>Gulberg, Lahore</a></li>
+            <li><a href="tel:+923001234567"><i class="bi bi-telephone-fill"></i>+92 318 616 7543</a></li>
+            <li><a href="mailto:info@brightworldled.com"><i class="bi bi-envelope-fill"></i>husnyn24@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-title">Newsletter</div>
+          <form id="newsletter-form">
+            <div class="input-group mb-2"><input type="email" class="form-control" placeholder="Your email"
+                required /><button class="btn-primary-grad btn" type="submit"
+                style="border-radius:0 10px 10px 0;">Subscribe</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2"><span>&#169; 2025
+          BrightWorld LED Lights. All Rights Reserved.</span><span><a href="sitemap.html"
+            style="color:var(--primary-light);text-decoration:none;">Sitemap</a></span></div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

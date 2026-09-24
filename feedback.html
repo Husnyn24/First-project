@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="BrightWorld LED feedback page. Share your purchase experience, product ratings, and valuable suggestions with us." />
+  <title>Customer Feedback BrightWorld LED Lights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <style>
+    .star-rating {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 1.8rem;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .star-rating input:checked~label,
+    .star-rating label:hover,
+    .star-rating label:hover~label {
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading-screen">
+    <div class="loader-logo">Bright<span>World</span></div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- Top Bar -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex gap-4"><a href="mailto:info@brightworldled.com"><i
+              class="bi bi-envelope-fill me-1"></i>husnyn24@gmail.com</a><a href="tel:+923001234567"><i
+              class="bi bi-telephone-fill me-1"></i>+92 318 616 7543</a></div>
+        <div class="social-icons d-flex gap-1"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+              class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-icon"><i class="bi bi-lightbulb-fill text-white"></i></div>Bright<span
+          class="brand-world">World</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 d-lg-none"><button class="dark-toggle" id="dark-toggle-mobile"><i
+            class="bi bi-sun-fill"></i></button><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav"><i class="bi bi-list text-white fs-5"></i></button></div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarShopDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarShopDropdown">
+              <li><a class="dropdown-item" href="products.html">Products</a></li>
+              <li><a class="dropdown-item" href="brands.html">Brands</a></li>
+              <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="download.html">Downloads</a></li>
+            </ul>
+          </li>
+          <!-- Company Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCompanyDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Company
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCompanyDropdown">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+            </ul>
+          </li>
+          <!-- Support Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarSupportDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Support
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarSupportDropdown">
+              <li><a class="dropdown-item" href="queries.html">Queries &amp; FAQ</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex gap-2"><button class="dark-toggle" id="dark-toggle"><i class="bi bi-sun-fill"></i></button><a
+            href="cart.html" class="btn-primary-grad btn btn-sm px-3 py-2"><i class="bi bi-cart3"></i> <span>Cart</span>
+            <span class="badge bg-warning text-dark ms-1 rounded-pill" id="cart-count"
+              style="font-size:0.7rem">0</span></a></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="offcanvas offcanvas-start" id="mobileNav" tabindex="-1">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Bright<span style="color:var(--accent)">World</span></h5><button type="button"
+        class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav gap-1">
+        <li><a class="nav-link" href="index.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-house-fill me-2"></i>Home</a></li>
+        <li><a class="nav-link" href="products.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-grid-fill me-2"></i>Products</a></li>
+        <li><a class="nav-link" href="feedback.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-chat-fill me-2"></i>Feedback</a></li>
+        <li><a class="nav-link" href="contact.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-geo-alt-fill me-2"></i>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Feedback</li>
+        </ol>
+      </nav>
+      <h1 class="section-title text-white mt-2">Customer <span class="grad">Feedback</span></h1>
+      <p class="section-sub">We highly value your feedback. Let us know how we can improve.</p>
+    </div>
+  </div>
+
+  <!-- Feedback Form Section -->
+  <section class="bg-dark-custom">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+
+          <!-- Success Alert (Initially Hidden) -->
+          <div class="alert alert-success d-flex align-items-center mb-4" role="alert" id="feedback-success"
+            style="display:none !important;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#4ade80;border-radius:14px;padding:16px;">
+            <i class="bi bi-check-circle-fill fs-4 me-3"></i>
+            <div>
+              <strong style="font-family:var(--font-heading);">Feedback Submitted Successfully!</strong><br>
+              Thank you for sharing your experience. Your response has been recorded.
+            </div>
+          </div>
+
+          <div class="glass-card p-4 p-md-5">
+            <div class="mb-4">
+              <h3 style="font-family:var(--font-heading);font-weight:800;" class="text-gradient">Feedback Form</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin:0;">Fields marked with * are required.</p>
+            </div>
+
+            <form id="feedback-form" novalidate>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" class="form-control" placeholder="Enter your full name" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" class="form-control" placeholder="username@example.com" required />
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Phone Number *</label>
+                  <input type="tel" class="form-control" placeholder="+92 300 1234567" required />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">City *</label>
+                  <input type="text" class="form-control" placeholder="e.g., Lahore, Karachi" required />
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label">Product Purchased *</label>
+                  <select class="form-select" required>
+                    <option value="" disabled selected>Select a product category</option>
+                    <option value="led-bulbs">LED Bulbs</option>
+                    <option value="spot-lights">Spot Lights</option>
+                    <option value="decoration-lights">Decoration Lights</option>
+                    <option value="smart-lights">Smart Lights</option>
+                    <option value="ceiling-lights">Ceiling Lights</option>
+                    <option value="tube-lights">Tube Lights</option>
+                    <option value="other">Other / Not Listed</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Overall Rating *</label>
+                  <div class="star-rating pt-2">
+                    <input type="radio" name="rating" id="star5" value="5" /><label for="star5" class="star-label"
+                      data-star="5"><i class="bi bi-star"></i></label>
+                    <input type="radio" name="rating" id="star4" value="4" /><label for="star4" class="star-label"
+                      data-star="4"><i class="bi bi-star"></i></label>
+                    <input type="radio" name="rating" id="star3" value="3" /><label for="star3" class="star-label"
+                      data-star="3"><i class="bi bi-star"></i></label>
+                    <input type="radio" name="rating" id="star2" value="2" /><label for="star2" class="star-label"
+                      data-star="2"><i class="bi bi-star"></i></label>
+                    <input type="radio" name="rating" id="star1" value="1" /><label for="star1" class="star-label"
+                      data-star="1"><i class="bi bi-star"></i></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Suggestions for Improvement</label>
+                <input type="text" class="form-control" placeholder="e.g. Add more color temperature options" />
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label">Detailed Review / Message *</label>
+                <textarea class="form-control" rows="5"
+                  placeholder="Share details of your purchase experience, delivery speed, and light quality..."
+                  required></textarea>
+              </div>
+
+              <div class="d-flex gap-3">
+                <button type="submit" class="btn-primary-grad btn flex-grow-1"><i class="bi bi-send-fill"></i>
+                  <span>Submit Feedback</span></button>
+                <button type="reset" class="btn btn-outline-secondary px-4" style="border-radius:14px;"><i
+                    class="bi bi-arrow-counterclockwise"></i> Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-0">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand mb-3">Bright<span>World</span></div>
+          <p class="footer-about">Pakistan's most trusted LED lighting store since 2009. Quality assured, warranted
+            products.</p>
+          <div class="footer-social d-flex gap-2 mt-3"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+                class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+                class="bi bi-whatsapp"></i></a></div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right"></i>Products</a></li>
+            <li><a href="brands.html"><i class="bi bi-chevron-right"></i>Brands</a></li>
+            <li><a href="gallery.html"><i class="bi bi-chevron-right"></i>Gallery</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i>About</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="queries.html"><i class="bi bi-chevron-right"></i>FAQ</a></li>
+            <li><a href="feedback.html"><i class="bi bi-chevron-right"></i>Feedback</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+            <li><a href="download.html"><i class="bi bi-chevron-right"></i>Downloads</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-geo-alt-fill"></i>Gulberg, Lahore</a></li>
+            <li><a href="tel:+923001234567"><i class="bi bi-telephone-fill"></i>+92 318 616 7543</a></li>
+            <li><a href="mailto:info@brightworldled.com"><i class="bi bi-envelope-fill"></i>husnyn24@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-title">Newsletter</div>
+          <form id="newsletter-form">
+            <div class="input-group mb-2"><input type="email" class="form-control" placeholder="Your email" /><button
+                class="btn-primary-grad btn" type="submit" style="border-radius:0 10px 10px 0;">Go</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2"><span>&#169; 2025
+          BrightWorld LED Lights. All Rights Reserved.</span></div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

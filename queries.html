@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Frequently Asked Questions (FAQ) about BrightWorld LED Bulbs, Smart Lights, Spotlights, and general lighting solutions." />
+  <title>Frequently Asked Questions BrightWorld LED Lights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="loading-screen">
+    <div class="loader-logo">Bright<span>World</span></div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- Top Bar -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex gap-4"><a href="mailto:info@brightworldled.com"><i
+              class="bi bi-envelope-fill me-1"></i>husnyn24@gmail.com</a><a href="tel:+923001234567"><i
+              class="bi bi-telephone-fill me-1"></i>+92 318 616 7543</a></div>
+        <div class="social-icons d-flex gap-1"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+              class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-icon"><i class="bi bi-lightbulb-fill text-white"></i></div>Bright<span
+          class="brand-world">World</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 d-lg-none"><button class="dark-toggle" id="dark-toggle-mobile"><i
+            class="bi bi-sun-fill"></i></button><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav"><i class="bi bi-list text-white fs-5"></i></button></div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarShopDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarShopDropdown">
+              <li><a class="dropdown-item" href="products.html">Products</a></li>
+              <li><a class="dropdown-item" href="brands.html">Brands</a></li>
+              <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="download.html">Downloads</a></li>
+            </ul>
+          </li>
+          <!-- Company Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCompanyDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Company
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCompanyDropdown">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+            </ul>
+          </li>
+          <!-- Support Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarSupportDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Support
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarSupportDropdown">
+              <li><a class="dropdown-item" href="queries.html">Queries &amp; FAQ</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex gap-2"><button class="dark-toggle" id="dark-toggle"><i class="bi bi-sun-fill"></i></button><a
+            href="cart.html" class="btn-primary-grad btn btn-sm px-3 py-2"><i class="bi bi-cart3"></i> <span>Cart</span>
+            <span class="badge bg-warning text-dark ms-1 rounded-pill" id="cart-count"
+              style="font-size:0.7rem">0</span></a></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="offcanvas offcanvas-start" id="mobileNav" tabindex="-1">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Bright<span style="color:var(--accent)">World</span></h5><button type="button"
+        class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav gap-1">
+        <li><a class="nav-link" href="index.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-house-fill me-2"></i>Home</a></li>
+        <li><a class="nav-link" href="products.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-grid-fill me-2"></i>Products</a></li>
+        <li><a class="nav-link" href="queries.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-question-circle-fill me-2"></i>Queries</a></li>
+        <li><a class="nav-link" href="contact.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-geo-alt-fill me-2"></i>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Queries</li>
+        </ol>
+      </nav>
+      <h1 class="section-title text-white mt-2">Questions &amp; <span class="grad">Queries</span></h1>
+      <p class="section-sub">Browse frequently asked questions or submit your query directly to our support team.</p>
+    </div>
+  </div>
+
+  <!-- FAQ Section & Accordion -->
+  <section class="bg-dark-custom">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Accordion FAQ -->
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="section-tag"><i class="bi bi-patch-question-fill"></i> FAQ</div>
+          <h2 class="section-title">Frequently Asked <span class="grad">Questions</span></h2>
+          <p style="color:var(--text-muted);margin-bottom:30px;">Can't find the answer you are looking for? Look through
+            our commonly asked general queries below.</p>
+
+          <div class="accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                  Do your LED bulbs come with a warranty?
+                </button>
+              </h3>
+              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, all premium brand LED lights (Philips, Havells, Osram, Syska, etc.) come with a replacement
+                  warranty of 1 to 3 years. The specific warranty period is highlighted on each product box and
+                  catalogue guide.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq2">
+                  What is the estimated lifespan of an LED light?
+                </button>
+              </h3>
+              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Most of our high-quality LED lights have a lifespan ranging from 15,000 to 50,000 hours, depending on
+                  operating voltage and environment. This equates to over 10 years of use under normal household
+                  conditions.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq3">
+                  Do you offer home delivery and installation services?
+                </button>
+              </h3>
+              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We provide standard home delivery across Pakistan. Free installation is available in Lahore for order
+                  amounts exceeding &#8360;5,000. For other cities, setup support can be arranged upon query submission.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq4">
+                  What is the difference between warm white, natural white, and cool daylight?
+                </button>
+              </h3>
+              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Warm white (2700K-3000K) has a yellow-ish warm glow, best for bedrooms and living rooms. Natural white
+                  (4000K) is a clean neutral white, great for kitchens/bathrooms. Cool daylight (6000K-6500K) is a crisp
+                  bluish-white, ideal for reading, offices, and garages.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#faq5">
+                  Can I control Smart LEDs without Wi-Fi?
+                </button>
+              </h3>
+              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Some smart LEDs support Bluetooth connectivity, enabling control within a short range using your
+                  phone's app. However, a constant Wi-Fi connection is required to control smart bulbs remotely (away
+                  from home) or link them to voice assistants (Alexa/Google Assistant).
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Query Form -->
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="glass-card p-4">
+            <h3 style="font-family:var(--font-heading);font-weight:800;margin-bottom:8px;" class="text-gradient">Submit
+              a Query</h3>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:24px;">Have a specific question? Send us a
+              message and we'll reply as soon as possible.</p>
+
+            <form id="query-form">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="Your name" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="form-control" placeholder="username@example.com" required />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input type="text" class="form-control" placeholder="e.g., Warranty Replacement" required />
+              </div>
+              <div class="mb-4">
+                <label class="form-label">Your Question / Message</label>
+                <textarea class="form-control" rows="4" placeholder="Explain your question in detail..."
+                  required></textarea>
+              </div>
+              <button type="submit" class="btn-primary-grad btn w-100"><i class="bi bi-send-fill"></i> <span>Submit
+                  Query</span></button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-0">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand mb-3">Bright<span>World</span></div>
+          <p class="footer-about">Pakistan's most trusted LED lighting store since 2009. Quality assured, warranted
+            products.</p>
+          <div class="footer-social d-flex gap-2 mt-3"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+                class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+                class="bi bi-whatsapp"></i></a></div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right"></i>Products</a></li>
+            <li><a href="brands.html"><i class="bi bi-chevron-right"></i>Brands</a></li>
+            <li><a href="gallery.html"><i class="bi bi-chevron-right"></i>Gallery</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i>About</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="queries.html"><i class="bi bi-chevron-right"></i>FAQ</a></li>
+            <li><a href="feedback.html"><i class="bi bi-chevron-right"></i>Feedback</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+            <li><a href="download.html"><i class="bi bi-chevron-right"></i>Downloads</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-geo-alt-fill"></i>Gulberg, Lahore</a></li>
+            <li><a href="tel:+923001234567"><i class="bi bi-telephone-fill"></i>+92 318 616 7543</a></li>
+            <li><a href="mailto:info@brightworldled.com"><i class="bi bi-envelope-fill"></i>husnyn24@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-title">Newsletter</div>
+          <form id="newsletter-form">
+            <div class="input-group mb-2"><input type="email" class="form-control" placeholder="Your email" /><button
+                class="btn-primary-grad btn" type="submit" style="border-radius:0 10px 10px 0;">Go</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2"><span>&#169; 2025
+          BrightWorld LED Lights. All Rights Reserved.</span></div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

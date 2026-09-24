@@ -1,0 +1,662 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="BrightWorld LED Gallery â€“ Browse our stunning LED lighting installations, showroom photos, and project showcases." />
+  <title>Gallery BrightWorld LED Lights</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <style>
+    .gallery-grid {
+      columns: 4;
+      column-gap: 16px;
+    }
+
+    .gallery-grid .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 1199px) {
+      .gallery-grid {
+        columns: 3;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .gallery-grid {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        columns: 1;
+      }
+    }
+
+    .gallery-item img {
+      height: auto;
+    }
+
+    .gallery-item:nth-child(3n+1) img {
+      height: 260px;
+    }
+
+    .gallery-item:nth-child(3n+2) img {
+      height: 200px;
+    }
+
+    .gallery-item:nth-child(3n) img {
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading-screen">
+    <div class="loader-logo">Bright<span>World</span></div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+    <div class="loader-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <!-- Top Bar -->
+  <div class="topbar d-none d-md-block">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex gap-4"><a href="mailto:info@brightworldled.com"><i
+              class="bi bi-envelope-fill me-1"></i>husnyn24@gmail.com</a><a href="tel:+923001234567"><i
+              class="bi bi-telephone-fill me-1"></i>+92 318 616 7543</a></div>
+        <div class="social-icons d-flex gap-1"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+              class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-icon"><i class="bi bi-lightbulb-fill text-white"></i></div>Bright<span
+          class="brand-world">World</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 d-lg-none"><button class="dark-toggle" id="dark-toggle-mobile"><i
+            class="bi bi-sun-fill"></i></button><button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileNav"><i class="bi bi-list text-white fs-5"></i></button></div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarShopDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Shop
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarShopDropdown">
+              <li><a class="dropdown-item" href="products.html">Products</a></li>
+              <li><a class="dropdown-item" href="brands.html">Brands</a></li>
+              <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+              <li><a class="dropdown-item" href="download.html">Downloads</a></li>
+            </ul>
+          </li>
+          <!-- Company Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCompanyDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Company
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarCompanyDropdown">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="feedback.html">Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+            </ul>
+          </li>
+          <!-- Support Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarSupportDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Support
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarSupportDropdown">
+              <li><a class="dropdown-item" href="queries.html">Queries &amp; FAQ</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-flex gap-2"><button class="dark-toggle" id="dark-toggle"><i class="bi bi-sun-fill"></i></button><a
+            href="cart.html" class="btn-primary-grad btn btn-sm px-3 py-2"><i class="bi bi-cart3"></i>
+            <span>Cart</span> <span class="badge bg-warning text-dark ms-1 rounded-pill" id="cart-count"
+              style="font-size:0.7rem">0</span></a></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="offcanvas offcanvas-start" id="mobileNav" tabindex="-1">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Bright<span style="color:var(--accent)">World</span></h5><button type="button"
+        class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav gap-1">
+        <li><a class="nav-link" href="index.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-house-fill me-2"></i>Home</a></li>
+        <li><a class="nav-link" href="products.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-grid-fill me-2"></i>Products</a></li>
+        <li><a class="nav-link" href="gallery.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-images me-2"></i>Gallery</a></li>
+        <li><a class="nav-link" href="about.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-info-circle-fill me-2"></i>About Us</a></li>
+        <li><a class="nav-link" href="contact.html" data-bs-dismiss="offcanvas"><i
+              class="bi bi-geo-alt-fill me-2"></i>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Gallery</li>
+        </ol>
+      </nav>
+      <h1 class="section-title text-white mt-2">Our <span class="grad">Lighting Gallery</span></h1>
+      <p class="section-sub">See our premium LED installations, showroom &amp; project photos.</p>
+    </div>
+  </div>
+
+  <!-- Filter Tabs -->
+  <div class="bg-surface py-4" style="border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="showroom">Showroom</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor</button>
+        <button class="filter-btn" data-filter="decoration">Decoration</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gallery Grid (Ab sub pictures ka size bilkul barabar hoga) -->
+  <section class="bg-dark-custom">
+    <div class="container">
+      <div class="gallery-grid" id="gallery-grid">
+
+        <!-- Item 1: Modern Living Room -->
+        <div class="gallery-item filter-item" data-category="residential"
+          data-src="assets/img/Gallery/Modern living room.png" data-alt="Modern Living Room LED" data-aos="fade-up">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#0a1a2e,#0d3a6a); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Modern living room.png" alt="Modern Living Room"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Modern Living Room
+              LED Setup</span></div>
+        </div>
+
+        <!-- Item 2: Office Tube Light -->
+        <div class="gallery-item filter-item" data-category="commercial"
+          data-src="assets/img/Gallery/office tube light installation.png" data-alt="Office LED Installation"
+          data-aos="fade-up" data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001a1a,#003a3a); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/office tube light installation.png" alt="Office LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Office Tube Light
+              Installation</span></div>
+        </div>
+
+        <!-- Item 3: RGB Fairy Light -->
+        <div class="gallery-item filter-item" data-category="decoration"
+          data-src="assets/img/Gallery/RGB Fairy Light Decoration.png" data-alt="Fairy Light Decoration"
+          data-aos="fade-up" data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a0a1a,#3a0a3a); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/RGB Fairy Light Decoration.png" alt="RGB Fairy Light"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">RGB Fairy Light
+              Decoration</span></div>
+        </div>
+
+        <!-- Item 4: BrightWorld Showroom -->
+        <div class="gallery-item filter-item" data-category="showroom"
+          data-src="assets/img/Gallery/BrightWorld Showroom Display.png" data-alt="BrightWorld Showroom"
+          data-aos="fade-up" data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a1500,#3a2800); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/BrightWorld Showroom Display.png" alt="BrightWorld Showroom"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">BrightWorld Showroom
+              Display</span></div>
+        </div>
+
+        <!-- Item 5: Garden LED -->
+        <div class="gallery-item filter-item" data-category="outdoor"
+          data-src="assets/img/Gallery/Garden LED Path Lights.png" data-alt="Garden LED Lights" data-aos="fade-up"
+          data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001a0a,#003a15); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Garden LED Path Lights.png" Garden LED Lights"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Garden LED Path
+              Lights</span></div>
+        </div>
+
+        <!-- Item 6: Bedroom Ambient -->
+        <div class="gallery-item filter-item" data-category="residential"
+          data-src="assets/img/Gallery/Bedroom Ambient LED Strip.png" data-alt="Bedroom LED Strip" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#0a0015,#1a0035); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Bedroom Ambient LED Strip.png" alt="Bedroom Ambient"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Bedroom Ambient LED
+              Strip</span></div>
+        </div>
+
+        <!-- Item 7: Restaurant Ambient -->
+        <div class="gallery-item filter-item" data-category="commercial"
+          data-src="assets/img/Gallery/restaurant ambient lighting.png" data-alt="Restaurant LED" data-aos="fade-up"
+          data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a0500,#3a0f00); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/restaurant ambient lighting.png" alt="Restaurant Ambient"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Restaurant Ambient
+              Lighting</span></div>
+        </div>
+
+        <!-- Item 8: Building Facade -->
+        <div class="gallery-item filter-item" data-category="outdoor"
+          data-src="assets/img/Gallery/building facade led lighting.png" data-alt="Building Facade LED"
+          data-aos="fade-up" data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001015,#002035); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/building facade led lighting.png" alt="Building Facade"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Building Facade LED
+              Lighting</span></div>
+        </div>
+
+        <!-- Item 9: Showroom Product Display -->
+        <div class="gallery-item filter-item" data-category="showroom"
+          data-src="assets/img/Gallery/Showroom Product Display Wall.png" data-alt="Product Display" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#100a1a,#200a3a); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Showroom Product Display Wall.png" alt="Showroom Product Display"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Showroom Product
+              Display Wall</span></div>
+        </div>
+
+        <!-- Item 10: Kitchen LED -->
+        <div class="gallery-item filter-item" data-category="residential"
+          data-src="assets/img/Gallery/Modern Kitchen Under-Cabinet LED.png" data-alt="Kitchen LED" data-aos="fade-up"
+          data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001a10,#003a20); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Modern Kitchen Under-Cabinet LED.png" alt="Kitchen LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Modern Kitchen
+              Under-Cabinet LED</span></div>
+        </div>
+
+        <!-- Item 11: Festival & Eid -->
+        <div class="gallery-item filter-item" data-category="decoration"
+          data-src="assets/img/Gallery/Festival & Eid LED Decoration.png" data-alt="Festival Lights" data-aos="fade-up"
+          data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a1000,#3a2000); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Festival & Eid LED Decoration.png" alt="Festival Lights"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Festival &amp; Eid
+              LED Decoration</span></div>
+        </div>
+
+        <!-- Item 12: Factory High-Bay -->
+        <div class="gallery-item filter-item" data-category="commercial"
+          data-src="assets/img/Gallery/Factory High-Bay LED Lighting.png" data-alt="Factory LED" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#0a0015,#150030); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Factory High-Bay LED Lighting.png" alt="Factory LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Factory High-Bay LED
+              Lighting</span></div>
+        </div>
+
+        <!-- Item 13: Street LED -->
+        <div class="gallery-item filter-item" data-category="outdoor"
+          data-src="assets/img/Gallery/street and parking led flood lights.png" data-alt="Street LED" data-aos="fade-up"
+          data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001510,#003020); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/street and parking led flood lights.png" alt="Street LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Street &amp; Parking
+              LED Flood Lights</span></div>
+        </div>
+
+        <!-- Item 14: LED Bulb Testing -->
+        <div class="gallery-item filter-item" data-category="showroom"
+          data-src="assets/img/Gallery/LED Bulb Testing & Display Station.png" data-alt="Showroom" data-aos="fade-up"
+          data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a0a00,#3a1500); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/LED Bulb Testing & Display Station.png" alt="LED Bulb Testing"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">LED Bulb Testing
+              &amp; Display Station</span></div>
+        </div>
+
+        <!-- Item 15: Smart Home LED -->
+        <div class="gallery-item filter-item" data-category="residential"
+          data-src="assets/img/Gallery/Complete Smart Home LED Setup.png" data-alt="Smart Home LED" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#0a1a0a,#0d3a0d); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Complete Smart Home LED Setup.png" alt="Smart Home LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Complete Smart Home
+              LED Setup</span></div>
+        </div>
+
+        <!-- Item 16: Hospital LED -->
+        <div class="gallery-item filter-item" data-category="commercial"
+          data-src="assets/img/Gallery/Hospital & Medical Centre LED.png" data-alt="Hospital LED" data-aos="fade-up"
+          data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001a1a,#003535);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Hospital & Medical Centre LED.png" alt="Hospital LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Hospital &amp;
+              Medical Centre LED</span></div>
+        </div>
+
+        <!-- Item 17: Neon Sign LED -->
+        <div class="gallery-item filter-item" data-category="decoration"
+          data-src="assets/img/Gallery/Custom Neon LED Sign Installation.png" data-alt="Neon Sign LED"
+          data-aos="fade-up" data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#15001a,#30003a); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Custom Neon LED Sign Installation.png" alt="Neon Sign LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Custom Neon LED Sign
+              Installation</span></div>
+        </div>
+
+        <!-- Item 18: Flood Light -->
+        <div class="gallery-item filter-item" data-category="outdoor"
+          data-src="assets/img/Gallery/Outdoor Stadium LED Flood Lights.png" data-alt="Flood Light" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a0000,#3a0500); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Outdoor Stadium LED Flood Lights.png" alt="Flood Light"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Outdoor Stadium LED
+              Flood Lights</span></div>
+        </div>
+
+        <!-- Item 19: Brand Partner Certification -->
+        <div class="gallery-item filter-item" data-category="showroom"
+          data-src="assets/img/Gallery/brand partner certification display.png" data-alt="Showroom" data-aos="fade-up"
+          data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#0d0f1a,#1a1d3a); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/brand partner certification display.png" alt="Brand Partner"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Brand Partner
+              Certification Display</span></div>
+        </div>
+
+        <!-- Item 20: Bathroom LED -->
+        <div class="gallery-item filter-item" data-category="residential"
+          data-src="assets/img/Gallery/Bathroom IP65 LED Downlights.png" data-alt="Bathroom LED" data-aos="fade-up"
+          data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001a1a,#003030); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Bathroom IP65 LED Downlights.png" alt="Bathroom LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Bathroom IP65 LED
+              Downlights</span></div>
+        </div>
+
+        <!-- Item 21: Retail LED -->
+        <div class="gallery-item filter-item" data-category="commercial"
+          data-src="assets/img/Gallery/Retall Store Track Lighting.png" data-alt="Retail LED" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#1a1000,#3a2200); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Retall Store Track Lighting.png" alt="Retail LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Retail Store Track
+              Lighting</span></div>
+        </div>
+
+        <!-- Item 22: Christmas Lights -->
+        <div class="gallery-item filter-item" data-category="decoration"
+          data-src="assets/img/Gallery/Christmas & Seasonal LED Decoration.png" data-alt="Christmas Lights"
+          data-aos="fade-up" data-aos-delay="0">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#001a0a,#003010); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Christmas & Seasonal LED Decoration.png" alt="Christmas Lights"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Christmas &amp;
+              Seasonal LED Decoration</span></div>
+        </div>
+
+        <!-- Item 23: Pool LED -->
+        <div class="gallery-item filter-item" data-category="outdoor"
+          data-src="assets/img/Gallery/Swimming Pool LED Underwater.png" data-alt="Pool LED" data-aos="fade-up"
+          data-aos-delay="40">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#000a1a,#001525); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Swimming Pool LED Underwater.png" alt="Pool LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Swimming Pool LED
+              Underwater</span></div>
+        </div>
+
+        <!-- Item 24: Study Room LED -->
+        <div class="gallery-item filter-item" data-category="residential"
+          data-src="assets/img/Gallery/Study Room LED Task Lighting.png" data-alt="Study Room LED" data-aos="fade-up"
+          data-aos-delay="80">
+          <div
+            style="width:100%; height:250px; background:linear-gradient(135deg,#0a0c15,#0d1530); border-radius:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; position:relative;"
+            class="gallery-overlay-wrap">
+            <img src="assets/img/Gallery/Study Room LED Task Lighting.png" alt="Study Room LED"
+              style="width:100%; height:100%; object-fit:cover;">
+            <div class="gallery-overlay"><i class="bi bi-zoom-in"></i></div>
+          </div>
+          <div style="padding:10px 4px 0;"><span style="font-size:0.8rem;color:var(--text-muted);">Study Room LED Task
+              Lighting</span></div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button id="lightbox-close" aria-label="Close">&#10005;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-0">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-brand mb-3">Bright<span>World</span></div>
+          <p class="footer-about">Pakistan's most trusted LED store. 15+ years of excellence in lighting solutions.</p>
+          <div class="footer-social d-flex gap-2 mt-3"><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i
+                class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-twitter-x"></i></a><a href="#"><i
+                class="bi bi-whatsapp"></i></a></div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i>Home</a></li>
+            <li><a href="products.html"><i class="bi bi-chevron-right"></i>Products</a></li>
+            <li><a href="brands.html"><i class="bi bi-chevron-right"></i>Brands</a></li>
+            <li><a href="gallery.html"><i class="bi bi-chevron-right"></i>Gallery</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i>About</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Support</div>
+          <ul class="footer-links">
+            <li><a href="queries.html"><i class="bi bi-chevron-right"></i>FAQ</a></li>
+            <li><a href="feedback.html"><i class="bi bi-chevron-right"></i>Feedback</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i>Contact</a></li>
+            <li><a href="download.html"><i class="bi bi-chevron-right"></i>Downloads</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <div class="footer-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-geo-alt-fill"></i>Gulberg, Lahore</a></li>
+            <li><a href="tel:+923001234567"><i class="bi bi-telephone-fill"></i>+92 318 616 7543</a></li>
+            <li><a href="mailto:info@brightworldled.com"><i class="bi bi-envelope-fill"></i>husnyn24@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-title">Newsletter</div>
+          <form id="newsletter-form">
+            <div class="input-group mb-2"><input type="email" class="form-control" placeholder="Your email" /><button
+                class="btn-primary-grad btn" type="submit" style="border-radius:0 10px 10px 0;">Go</button></div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap gap-2"><span>&#169; 2025
+          BrightWorld LED Lights. All Rights Reserved.</span></div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Gallery item click - open lightbox with gradient preview
+    document.querySelectorAll('.gallery-overlay-wrap').forEach(item => {
+      item.addEventListener('click', () => {
+        const lb = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        // Create a canvas with the gradient as a blob URL
+        const canvas = document.createElement('canvas');
+        canvas.width = 800; canvas.height = 600;
+        const ctx = canvas.getContext('2d');
+        const grd = ctx.createLinearGradient(0, 0, 800, 600);
+        grd.addColorStop(0, '#0a1a2e'); grd.addColorStop(1, '#0d3a6a');
+        ctx.fillStyle = grd; ctx.fillRect(0, 0, 800, 600);
+        ctx.fillStyle = 'rgba(10,132,255,0.3)'; ctx.font = '200px serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('ðŸ’¡', 400, 300);
+        lbImg.src = canvas.toDataURL();
+        lb.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Filter gallery items
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.filter-item').forEach(item => {
+          item.style.display = filter === 'all' || item.dataset.category === filter ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
