@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrightWorld LED Lights — Aptech E-Project Documentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ══ RESET & VARIABLES ══ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0f1e3d;
+      --navy-mid:   #1a3260;
+      --navy-lt:    #243b77;
+      --gold:       #c9a84c;
+      --gold-lt:    #e8c97a;
+      --gold-pale:  #fdf8ec;
+      --accent:     #1e4db7;
+      --white:      #ffffff;
+      --off-white:  #f7f8fc;
+      --text-dk:    #1a1f36;
+      --text-mid:   #3d4466;
+      --text-lt:    #6b7294;
+      --border:     #d4d8e8;
+      --green:      #1a7a4a;
+      --sh-sm:      0 2px 8px rgba(15,30,61,.10);
+      --sh-md:      0 4px 20px rgba(15,30,61,.15);
+      --sh-lg:      0 8px 40px rgba(15,30,61,.22);
+    }
+
+    html { font-size: 12pt; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text-dk);
+      background: #dde2ee;
+      line-height: 1.8;
+    }
+
+    /* ══ PAGE ══ */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 10mm auto;
+      padding: 22mm 24mm 20mm 30mm;
+      background: var(--white);
+      position: relative;
+      page-break-after: always;
+      box-shadow: var(--sh-lg);
+    }
+    /* Gold-navy left stripe */
+    .page:not(.cover-page)::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 7px;
+      background: linear-gradient(180deg, var(--gold) 0%, var(--navy) 100%);
+    }
+
+    /* ══ COVER PAGE ══ */
+    .cover-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 263mm;
+      padding: 14mm 18mm 12mm;
+      background: linear-gradient(155deg, #0b1730 0%, #0f1e3d 40%, #0d2550 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-page::before {
+      content: '';
+      position: absolute;
+      top: -90px; left: -90px;
+      width: 350px; height: 350px;
+      background: radial-gradient(circle, rgba(201,168,76,.18), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cover-page::after {
+      content: '';
+      position: absolute;
+      bottom: -70px; right: -70px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(30,77,183,.22), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cover-inner { position: relative; z-index: 2; width: 100%; }
+
+    .aptech-header {
+      font-size: 28pt;
+      font-weight: 800;
+      font-style: italic;
+      color: #e53935;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 14px rgba(229,57,53,.45);
+    }
+    .aptech-tagline {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,.48);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .cover-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 10px 0;
+    }
+    .cover-logo-wrap {
+      width: 90px; height: 90px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-lt));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 12px auto 14px;
+      font-size: 40px;
+      box-shadow: 0 0 0 7px rgba(201,168,76,.22), 0 0 44px rgba(201,168,76,.5);
+    }
+    .cover-institute {
+      font-size: 9pt; font-weight: 600;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,.60); margin-bottom: 3px;
+    }
+    .cover-semester {
+      font-size: 8.5pt; color: var(--gold);
+      letter-spacing: 1px; margin-bottom: 10px; font-weight: 500;
+    }
+    .cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28pt; font-weight: 900;
+      color: #fff; letter-spacing: 1px;
+      margin: 8px 0 4px; line-height: 1.15;
+    }
+    .cover-title span { color: var(--gold-lt); }
+    .cover-subtitle {
+      font-size: 10pt; font-weight: 400;
+      color: rgba(255,255,255,.55); margin-bottom: 14px;
+    }
+    .cover-project-name {
+      font-size: 10.5pt; font-weight: 600;
+      background: rgba(201,168,76,.14);
+      border: 1.5px solid var(--gold);
+      color: var(--gold-lt);
+      padding: 8px 26px;
+      border-radius: 30px;
+      margin: 8px 0 18px;
+      display: inline-block;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .cover-prepared {
+      font-size: 8.5pt; font-weight: 600;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 9px; letter-spacing: 2px;
+    }
+    .members-table {
+      width: 100%; border-collapse: collapse;
+      margin: 6px 0 16px; font-size: 10pt;
+    }
+    .members-table td {
+      padding: 7px 13px;
+      border: 1px solid rgba(201,168,76,.32);
+      color: rgba(255,255,255,.82);
+    }
+    .members-table tr:nth-child(odd) td { background: rgba(201,168,76,.07); }
+    .members-table td:first-child { font-weight: 600; width: 60%; color: #fff; }
+    .members-table td:last-child  { font-style: italic; text-align: center; width: 40%; color: var(--gold-lt); }
+    .cover-submitted {
+      font-size: 10pt; margin-top: 14px;
+      text-align: center; color: rgba(255,255,255,.72); line-height: 2;
+    }
+    .cover-submitted strong { color: var(--gold-lt); }
+    .cover-footer-bar {
+      margin-top: 18px; padding-top: 10px;
+      border-top: 1px solid rgba(201,168,76,.28);
+      font-size: 7.5pt; color: rgba(255,255,255,.28); letter-spacing: .5px;
+    }
+
+    /* ══ PAGE HEADER BAR ══ */
+    .page-header-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 6px 14px;
+      background: var(--navy);
+      border-radius: 6px;
+      margin-bottom: 18px;
+    }
+    .page-header-bar .ph-title {
+      font-size: 8.5pt; font-weight: 700;
+      color: var(--gold-lt); letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .page-header-bar .ph-brand {
+      font-size: 8.5pt; color: rgba(255,255,255,.40); font-weight: 500;
+    }
+
+    /* ══ SECTION HEADINGS ══ */
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 16pt; font-weight: 900;
+      color: var(--navy);
+      text-align: center; letter-spacing: .5px;
+      margin: 0 0 4px;
+      padding-bottom: 6px;
+    }
+    .section-heading::after {
+      content: '';
+      display: block;
+      width: 52px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--accent));
+      margin: 8px auto 18px;
+      border-radius: 2px;
+    }
+    .sub-heading {
+      font-size: 11pt; font-weight: 700;
+      color: var(--navy-lt);
+      margin: 18px 0 10px;
+      padding: 6px 12px 6px 14px;
+      border-left: 4px solid var(--gold);
+      background: var(--off-white);
+      border-radius: 0 6px 6px 0;
+    }
+
+    /* ══ TOC ══ */
+    .toc-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 10.5pt; }
+    .toc-table tbody tr { border-bottom: 1px solid #eaecf5; }
+    .toc-table tbody tr:hover { background: var(--gold-pale); }
+    .toc-table td { padding: 9px 10px; color: var(--text-dk); }
+    .toc-table td:first-child { width: 10%; font-weight: 700; text-align: center; color: var(--navy); background: var(--off-white); }
+    .toc-table td:nth-child(2) { width: 75%; }
+    .toc-table td:last-child { width: 15%; text-align: right; font-weight: 700; color: var(--accent); }
+    .toc-table thead td {
+      font-weight: 800; background: var(--navy); color: var(--gold-lt);
+      text-align: center; font-size: 9.5pt;
+      text-transform: uppercase; letter-spacing: 1.5px;
+      padding: 10px;
+    }
+
+    /* ══ CERTIFICATE ══ */
+    .cert-box {
+      border: 2px solid var(--gold); border-radius: 10px;
+      padding: 26px 32px; margin: 14px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #fffdf5, #f8f9ff);
+      box-shadow: 0 4px 24px rgba(201,168,76,.18);
+      position: relative;
+    }
+    .cert-box::before {
+      content: ''; position: absolute; inset: 6px;
+      border: 1px solid rgba(201,168,76,.32); border-radius: 6px;
+      pointer-events: none;
+    }
+    .cert-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19pt; font-weight: 900;
+      color: var(--navy); letter-spacing: 2px; margin-bottom: 4px;
+    }
+    .cert-title-underline {
+      width: 80px; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--accent));
+      border-radius: 2px; margin: 6px auto 18px;
+    }
+    .cert-body { font-size: 11pt; line-height: 2; margin-bottom: 12px; color: var(--text-mid); }
+    .cert-sig-line {
+      margin-top: 34px; display: flex;
+      justify-content: space-between; font-size: 10pt;
+    }
+    .cert-sig-item { text-align: center; width: 30%; }
+    .cert-sig-item .sig-line {
+      border-top: 1.5px solid var(--navy-lt);
+      padding-top: 6px; margin-top: 26px;
+      font-weight: 700; color: var(--navy); font-size: 9.5pt;
+    }
+
+    /* ══ BODY TEXT ══ */
+    p { font-size: 10.5pt; margin-bottom: 12px; text-align: justify; line-height: 1.9; color: var(--text-mid); }
+    ul { margin: 7px 0 14px 22px; font-size: 10.5pt; }
+    ul li { margin-bottom: 6px; line-height: 1.85; color: var(--text-mid); }
+    ul li::marker { color: var(--gold); }
+
+    /* ══ DATA TABLE ══ */
+    .req-table {
+      width: 100%; border-collapse: collapse;
+      margin: 14px 0; font-size: 10pt;
+      border-radius: 8px; overflow: hidden;
+      box-shadow: var(--sh-sm);
+    }
+    .req-table th {
+      background: var(--navy); color: var(--gold-lt);
+      padding: 10px 12px; text-align: left;
+      font-size: 9.5pt; font-weight: 700; letter-spacing: .5px;
+    }
+    .req-table td {
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      border-right: 1px solid #edf0f8;
+      vertical-align: top; font-size: 10pt;
+      color: var(--text-mid);
+    }
+    .req-table tr:last-child td { border-bottom: 2px solid var(--navy); }
+    .req-table tr:nth-child(even) td { background: var(--off-white); }
+    .req-table tr:hover td { background: var(--gold-pale); }
+    .done-badge { color: var(--green); font-weight: 700; font-size: 10.5pt; }
+
+    /* ══ CODE BOX ══ */
+    .code-box {
+      background: #1a1f36;
+      border: 1px solid #2a3050;
+      border-left: 5px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 13px 17px;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 8pt;
+      line-height: 1.65;
+      margin: 12px 0;
+      white-space: pre-wrap;
+      word-break: break-all;
+      page-break-inside: avoid;
+      color: #c8d0ea;
+    }
+    .file-label {
+      font-weight: 700; font-size: 8.5pt;
+      background: var(--navy); color: var(--gold-lt);
+      padding: 4px 13px;
+      border-radius: 4px 4px 0 0;
+      display: inline-block; margin-bottom: 0;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: .5px;
+    }
+
+    /* ══ PAGE NUM ══ */
+    .page-num {
+      text-align: center; font-size: 8.5pt;
+      color: var(--text-lt); margin-top: 20px; font-style: italic;
+    }
+    .page-num::before, .page-num::after { content: ' ⟡ '; color: var(--gold); }
+
+    /* ══ MISC ══ */
+    hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 16px 0; }
+    .highlight-box {
+      border: 1px solid var(--gold);
+      border-left: 4px solid var(--gold);
+      background: linear-gradient(90deg, var(--gold-pale), #fafbff);
+      padding: 11px 15px; margin: 12px 0;
+      font-size: 10pt; border-radius: 0 8px 8px 0;
+      color: var(--text-mid);
+    }
+    .highlight-box strong { display: block; margin-bottom: 5px; font-size: 10.5pt; color: var(--navy); }
+    .module-heading {
+      font-size: 11pt; font-weight: 700; color: var(--navy);
+      margin: 16px 0 5px;
+      padding-left: 10px;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* ══ PRINT BTN ══ */
+    .print-btn {
+      position: fixed; bottom: 26px; right: 26px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      color: var(--gold-lt);
+      border: 1.5px solid var(--gold);
+      padding: 12px 26px; border-radius: 50px;
+      font-size: 10.5pt; font-weight: 700; cursor: pointer;
+      box-shadow: 0 4px 24px rgba(15,30,61,.45);
+      font-family: 'Inter', sans-serif; z-index: 999;
+      letter-spacing: .5px; transition: all .25s ease;
+    }
+    .print-btn:hover {
+      background: linear-gradient(135deg, var(--accent), var(--navy));
+      box-shadow: 0 6px 32px rgba(15,30,61,.55);
+      transform: translateY(-2px);
+    }
+
+    /* ══ PRINT MEDIA ══ */
+    @media print {
+      @page { size: A4; margin: 18mm 20mm 18mm 22mm; }
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; page-break-after: always; }
+      .page:not(.cover-page)::before { display: none; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     PAGE 1 — COVER PAGE
+══════════════════════════════════════════ -->
+<div class="page cover-page">
+
+  <div style="text-align:center; margin-bottom:10px;">
+    <div class="aptech-header">Aptech</div>
+    <div class="aptech-tagline">COMPUTER EDUCATION — Enhancing Education Through Technology</div>
+  </div>
+
+  <div class="cover-line"></div>
+
+  <div class="cover-logo-wrap">💡</div>
+
+  <div class="cover-institute">Aptech Computer Education</div>
+  <div style="font-size:10pt; margin-bottom:6px; font-style:italic;">HDSE — Semester III &nbsp;|&nbsp; E-Project</div>
+
+  <div class="cover-line"></div>
+
+  <div class="cover-title">BrightWorld LED Lights</div>
+  <div class="cover-subtitle">Online LED Lighting Store Website</div>
+
+  <div class="cover-project-name">" BRIGHTWORLD — LED LIGHTING PORTAL "</div>
+
+  <div class="cover-prepared">(Prepared By)</div>
+
+  <table class="members-table">
+    <tr>
+      <td>MR. HUSSNAIN AHMED</td>
+      <td>STUDENT — 1579001</td>
+    </tr>
+    <tr>
+      <td>MR. MUHAMMAD ALI</td>
+      <td>STUDENT — 1579002</td>
+    </tr>
+    <tr>
+      <td>MR. AHMED RAZA</td>
+      <td>STUDENT — 1579003</td>
+    </tr>
+    <tr>
+      <td>MR. USMAN TARIQ</td>
+      <td>STUDENT — 1579004</td>
+    </tr>
+  </table>
+
+  <div class="cover-submitted">
+    <strong>Submitted To:</strong> Aptech Computer Education<br />
+    <strong>Instructor:</strong> Sir Asad Ali<br />
+    <strong>Submission Date:</strong> July 27, 2026
+  </div>
+
+  <div class="cover-line" style="margin-top:auto;"></div>
+  <div style="font-size:9pt; color:#555; margin-top:8px;">
+    © 2026 BrightWorld LED Lights — Aptech E-Project Documentation
+  </div>
+
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 2 — TABLE OF CONTENTS
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Table of Contents</div>
+
+  <table class="toc-table">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Topic</td>
+        <td>Page</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>E-Certificate</td><td>03</td></tr>
+      <tr><td>2</td><td>Acknowledgement</td><td>04</td></tr>
+      <tr><td>3</td><td>Introduction</td><td>05</td></tr>
+      <tr><td>4</td><td>What's This E-Project</td><td>06</td></tr>
+      <tr><td>5</td><td>Objectives of the Project</td><td>07</td></tr>
+      <tr><td>6</td><td>Problem Statement</td><td>08</td></tr>
+      <tr><td>7</td><td>Requirement Specification</td><td>09</td></tr>
+      <tr><td>8</td><td>Pages Description</td><td>10</td></tr>
+      <tr><td>9</td><td>Technology Stack</td><td>11</td></tr>
+      <tr><td>10</td><td>Design System</td><td>12</td></tr>
+      <tr><td>11</td><td>Features &amp; Functionality</td><td>13</td></tr>
+      <tr><td>12</td><td>Source Code</td><td>14</td></tr>
+      <tr><td>13</td><td>Testing &amp; Results</td><td>17</td></tr>
+      <tr><td>14</td><td>Conclusion</td><td>18</td></tr>
+    </tbody>
+  </table>
+
+  <div class="page-num">— 02 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 3 — E-CERTIFICATE
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="cert-box">
+    <div class="cert-title">E — Certificate</div>
+
+    <p class="cert-body">
+      This is to certify that the following students have successfully completed their
+      <strong>HDSE Semester III E-Project</strong> titled:
+    </p>
+
+    <div style="font-size:14pt; font-weight:bold; font-style:italic; margin: 14px 0; letter-spacing:1px;">
+      " BrightWorld LED Lights — Online LED Lighting Store Website "
+    </div>
+
+    <p class="cert-body">
+      <strong>MR. HUSSNAIN AHMED,&nbsp; MR. MUHAMMAD ALI,&nbsp; MR. AHMED RAZA,&nbsp; MR. USMAN TARIQ</strong>
+      <br/>
+      have demonstrated outstanding dedication, technical skills, and teamwork in developing
+      a fully functional, responsive, and professional web-based LED Lighting Portal.
+    </p>
+
+    <p style="font-size:11pt; margin-top:10px;">
+      The project has been reviewed, evaluated, and approved for submission to the
+      <strong>E-Projects Team at Aptech Head Office.</strong>
+    </p>
+
+    <div style="font-size:11pt; margin-top:10px;">
+      <strong>Submitted to:</strong> Aptech Computer Education<br />
+      <strong>Date:</strong> July 27, 2026
+    </div>
+
+    <div class="cert-sig-line">
+      <div class="cert-sig-item">
+        <div class="sig-line">Student Signature</div>
+      </div>
+      <div class="cert-sig-item">
+        <div class="sig-line">Instructor: Sir Asad Ali</div>
+      </div>
+      <div class="cert-sig-item">
+        <div class="sig-line">Center Manager</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-num">— 03 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 4 — ACKNOWLEDGEMENT
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Acknowledgement</div>
+
+  <p>
+    First and foremost, we extend our sincere gratitude to <strong>Almighty Allah</strong> for granting us the strength, patience, and wisdom to successfully complete this E-Project titled <em>"BrightWorld LED Lights — Online LED Lighting Store Website."</em> Without His blessings, this achievement would not have been possible.
+  </p>
+
+  <p>
+    We would like to express our heartfelt appreciation to our respected instructor, <strong>Sir Asad Ali</strong>, whose continuous support, valuable guidance, and technical mentorship proved to be a pillar of strength for our team throughout the course of this project. Their vast knowledge, insightful feedback, and constant encouragement consistently motivated us to push our limits and explore deeper aspects of web development.
+  </p>
+
+  <p>
+    We also gratefully acknowledge the collaborative spirit and relentless dedication of our entire project team:
+  </p>
+
+  <p style="text-align:center; font-weight:bold;">
+    MR. HUSSNAIN AHMED &nbsp;|&nbsp; MR. MUHAMMAD ALI &nbsp;|&nbsp; MR. AHMED RAZA &nbsp;|&nbsp; MR. USMAN TARIQ
+  </p>
+
+  <p>
+    Each member brought unique strengths and actively contributed toward front-end development, design, JavaScript functionality, documentation, and quality assurance. Our team effort, coordination, and mutual support were key to delivering a fully functional, responsive, and visually impressive web-based application.
+  </p>
+
+  <p>
+    We would also like to extend our gratitude to our parents and well-wishers for their constant encouragement, emotional support, and understanding throughout the development period. Their motivation helped us stay focused and committed to delivering a high-quality project.
+  </p>
+
+  <p>
+    Finally, we sincerely thank the <strong>E-Project Coordination Team at Aptech Head Office</strong> for their consistent communication, clear project structure, and timely support that guided us in the right direction. Their efforts in managing and evaluating such large-scale academic projects are truly commendable.
+  </p>
+
+  <p>
+    This project has been a valuable learning experience for us — helping bridge the gap between academic theory and practical application. We welcome constructive feedback and suggestions to improve this project further.
+  </p>
+
+  <p style="text-align:right; margin-top:20px;"><strong>Thank You!</strong></p>
+
+  <div class="page-num">— 04 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 5 — INTRODUCTION
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Introduction</div>
+
+  <p>
+    The rapid growth of e-commerce and digital retail has fundamentally transformed the way businesses operate and interact with their customers. In today's competitive market environment, even specialized product stores — such as those dealing in LED lighting — require a strong online presence to remain relevant and accessible to a wider audience. BrightWorld, a physical LED lighting retail store, identified this need and sought to develop a comprehensive web-based solution to showcase its products, attract customers, and provide detailed product information online.
+  </p>
+
+  <p>
+    The <strong>BrightWorld LED Lights Website</strong> is a fully responsive, multi-page static web application designed to serve as the official online storefront for BrightWorld. This website provides customers with a seamless digital experience, allowing them to browse through various categories of LED lighting products, explore product specifications and pricing, discover different brands, and make informed purchasing decisions — all from the comfort of their homes.
+  </p>
+
+  <p>
+    The website features a modern, premium design with a dark-mode interface, smooth animations, an interactive product filtering and search system, a shopping cart, customer feedback functionality, and downloadable product documentation. It is built entirely using front-end technologies — HTML5, CSS3, and JavaScript — with Bootstrap 5 as the CSS framework.
+  </p>
+
+  <p>
+    This project not only fulfills the business requirement of establishing BrightWorld's online presence, but also demonstrates the practical application of modern web development skills, including responsive design, dynamic UI interactions, LocalStorage-based state management, and professional-grade visual design.
+  </p>
+
+  <p>
+    The website consists of <strong>11 fully developed HTML pages</strong>, each serving a specific purpose — from product listings and brand showcasing to feedback forms, gallery displays, and downloadable resources. Every page is consistent in design, fully responsive across all screen sizes, and follows best practices in web development and user experience design.
+  </p>
+
+  <div class="page-num">— 05 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 6 — WHAT'S THIS E-PROJECT
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">What's This E-Project</div>
+
+  <p>
+    The <strong>E-Project</strong> is a structured, hands-on learning initiative introduced by Aptech Computer Education that bridges classroom-based theoretical knowledge with real-world practical application. It provides students with a professional platform to design, develop, and document a fully functional software or web application based on a real industry problem.
+  </p>
+
+  <p>The E-Project enables students to:</p>
+
+  <ul>
+    <li>Practice in a structured and step-by-step manner, ensuring gradual skill development and confidence building.</li>
+    <li>Build comprehensive, multi-page web applications that demonstrate proficiency in frontend technologies.</li>
+    <li>Utilize various tools, libraries, and frameworks to design visually appealing and functionally efficient applications.</li>
+    <li>Transform individual components into a unified, well-organized project with consistent structure and design.</li>
+    <li>Learn to implement concepts in phases — requirements, design, development, testing, and documentation.</li>
+    <li>Work on real-life scenarios that align with current industry standards and user expectations.</li>
+    <li>Tackle realistic business challenges to design meaningful and valuable digital solutions.</li>
+  </ul>
+
+  <p>
+    For our <strong>BrightWorld LED Lights</strong> project, the E-Project framework provided a strong foundation for developing a functional, creative, and user-friendly website. This phased development approach allowed our team to collaborate effectively while applying modern web development techniques and industry best practices.
+  </p>
+
+  <p>
+    Throughout the project, we benefited from continuous mentoring and guidance from our instructor, who supported us in overcoming technical challenges and refining our application to a professional standard. After completion, the project along with its detailed documentation has been submitted to the E-Projects Team at Aptech for evaluation.
+  </p>
+
+  <p>
+    This experience has significantly strengthened our technical skills in HTML5, CSS3, JavaScript, and Bootstrap, while also improving our understanding of teamwork, problem-solving, project management, and real-world application development.
+  </p>
+
+  <div class="page-num">— 06 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 7 — OBJECTIVES
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Objectives of the Project</div>
+
+  <p>
+    The primary objective of this E-Project is to design and develop a fully functional, visually appealing, and user-friendly <strong>Online LED Lighting Store Website</strong> for BrightWorld. This system aims to provide a centralized digital platform where customers can browse LED lighting products, access specifications and pricing, explore brand offerings, submit feedback, and download product documentation — all without visiting the physical store.
+  </p>
+
+  <p>More specifically, the objectives of this project are:</p>
+
+  <ul>
+    <li>To develop a professional, multi-page website that serves as BrightWorld's complete digital storefront, accessible to customers at any time from any device.</li>
+    <li>To display all LED product categories (Bulbs, Spot Lights, Decoration Lights, Smart Lights, Tube Lights, and Ceiling Lights) with images, specifications, and pricing.</li>
+    <li>To provide a simple, interactive, and fully responsive user interface that ensures ease of navigation for all types of users on mobile, tablet, and desktop devices.</li>
+    <li>To implement a real-time product search, category filter, and sorting system that helps customers quickly find the products they need.</li>
+    <li>To showcase multiple LED brands (Philips, Osram, Havells, Syska, Wipro, Bajaj, Orient, GM Modular) with dedicated brand pages and filtered product listings.</li>
+    <li>To include a customer feedback form that allows visitors to share ratings, reviews, and suggestions with the store management.</li>
+    <li>To provide downloadable product documentation — including Price Lists, Product Catalogues, Technical Specifications, and Warranty Guides — for customer convenience.</li>
+    <li>To implement a shopping cart system using LocalStorage that enables customers to add products, manage quantities, and review selections.</li>
+    <li>To apply a premium Dark Mode / Light Mode theme toggle with user preference persistence across sessions.</li>
+    <li>To apply modern web development tools and best practices learned during the course, including HTML5 semantics, CSS3 animations, JavaScript ES6+, Bootstrap 5, and AOS library.</li>
+    <li>To enhance teamwork, communication, and real-world problem-solving skills through collaborative project development within the team.</li>
+  </ul>
+
+  <div class="page-num">— 07 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 8 — PROBLEM STATEMENT
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Problem Statement</div>
+
+  <div class="highlight-box">
+    <strong>Original Client Requirement (as provided):</strong>
+    BrightWorld is having a store for LED Lights. They have a collection of lights. Now with the changing environment, they want their presence on the Internet. Hence they need to have a website with all their products listed on the website. Consumers should find it easy to view various products and decide upon purchasing the right product to meet their requirements. A website needs to be designed to display various lights available with the store. Details of locations, feedback must be included.
+  </div>
+
+  <p>
+    In the traditional retail model, customers of BrightWorld LED Lights are required to physically visit the store to browse products, check specifications, compare prices, and make purchasing decisions. This process is often time-consuming and inconvenient, especially for customers living far from the store, those with busy schedules, or individuals who prefer to research products before making a purchase.
+  </p>
+
+  <p>
+    The key problems addressed by this project are as follows:
+  </p>
+
+  <ul>
+    <li>Customers have no way to browse BrightWorld's complete product inventory online, leading to missed sales opportunities and reduced customer reach.</li>
+    <li>There is no digital platform where customers can compare product specifications, pricing, and brands without visiting the physical store.</li>
+    <li>The store has no mechanism for collecting customer feedback digitally, making it difficult to improve services based on customer opinions.</li>
+    <li>Product documentation such as price lists, technical specifications, and catalogues are not accessible to customers outside the store.</li>
+    <li>Customers cannot view the store's location, contact information, or operating hours without directly calling or visiting the store.</li>
+    <li>There is no organized way to showcase the multiple LED brands offered by the store, making it difficult for brand-conscious customers to identify their preferred products.</li>
+    <li>The lack of an online presence results in reduced visibility in an increasingly digital marketplace, where competitors with websites gain a significant advantage.</li>
+  </ul>
+
+  <p>
+    Due to these challenges, there is a strong need for a professional, user-friendly, and comprehensive website for BrightWorld. Such a platform will provide a centralized digital storefront where customers can browse products, view specifications and pricing, explore brand offerings, find store contact details, submit feedback, and download product resources — thereby improving customer experience and expanding the store's market reach.
+  </p>
+
+  <div class="page-num">— 08 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 9 — REQUIREMENT SPECIFICATION
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Requirement Specification</div>
+
+  <p>
+    The website has been designed and developed based on the following requirement specifications provided by the client. All 10 requirements have been fully implemented in the final build:
+  </p>
+
+  <table class="req-table">
+    <thead>
+      <tr>
+        <th style="width:5%;">#</th>
+        <th style="width:45%;">Requirement</th>
+        <th style="width:40%;">Implementation</th>
+        <th style="width:10%;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>The Home Page should be created making use of Sections with a suitable logo, the header section can be added which will show images of various LED Lights.</td>
+        <td>index.html — Full-screen Hero Carousel (4 slides), BrightWorld logo with lightbulb icon, category sections with LED images.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>The site must contain the links to navigate through various types of LED Lights.</td>
+        <td>Sticky Navbar with 3 dropdown menus: Shop, Company, Support. Mobile offcanvas slide-in menu.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Links of LED Lights can be categorized like (Bulbs, Spot Lights, Decoration Lights, Smart Lights etc.)</td>
+        <td>products.html — Filter buttons for 6 categories: Bulbs, Spot Lights, Decoration, Smart Lights, Tube Lights, Ceiling Lights.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Specification and Pricing of Lights should be added along with the images.</td>
+        <td>Each product card shows: image, brand, name, spec tags, price in PKR, and Add-to-Cart button.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Website should provide section for various brands offered in the store.</td>
+        <td>brands.html — Dedicated page for 8 brands: Philips, Osram, Havells, Syska, Wipro, Bajaj, Orient, GM Modular.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Gallery section should be added for viewing different images.</td>
+        <td>gallery.html — Filterable image gallery with hover zoom effects and lightbox viewer.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Feedback must be allowed to enter by the viewer.</td>
+        <td>feedback.html — Complete form: name, email, phone, star rating (1–5), category, message.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Site map, Gallery, About us, Queries link, Contact us link must be added.</td>
+        <td>All 5 pages created: sitemap.html, gallery.html, about.html, queries.html, contact.html — linked in navbar and footer.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>The complete description must be allowed to get download as pdf or doc file.</td>
+        <td>download.html — 4 documents: Price List, Product Catalogue, Technical Specs, Warranty Guide.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>The advertise section with various facilities provided should be mentioned.</td>
+        <td>index.html — Features section, animated stats counters (10K+ Customers, 500+ Products), promotional banners.</td>
+        <td class="done-badge">✓ Done</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:14px;">
+    <strong>Result: All 10 out of 10 requirements have been successfully implemented.</strong>
+  </p>
+
+  <div class="page-num">— 09 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 10 — PAGES DESCRIPTION
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Pages Description</div>
+
+  <div class="module-heading">1. Home Page — index.html</div>
+  <p>The main entry point of the website. Contains: Loading Screen, Top Bar with contact info, Sticky Navbar with dropdowns, Hero Carousel (4 animated slides), Animated Stats Counter (10K+ Customers, 500+ Products, 50+ Brands, 15+ Years), Product Categories section, Featured Products, Brands section, Advertisement Banner, Testimonials, and Footer.</p>
+
+  <div class="module-heading">2. Products Page — products.html</div>
+  <p>Full product listing with: real-time Search Bar, Category Filter Buttons (All / Bulbs / Spot Lights / Decoration / Smart Lights / Tube Lights / Ceiling), Sort Options (Price &amp; Name), Product Cards with images/specs/price, Add-to-Cart functionality, and URL deep-link filtering support.</p>
+
+  <div class="module-heading">3. Brands Page — brands.html</div>
+  <p>Dedicated showcase for 8 brand partners: <strong>Philips (Netherlands), Osram (Germany), Havells, Syska, Wipro, Bajaj, Orient, GM Modular (India)</strong>. Each brand card links to filtered product listings.</p>
+
+  <div class="module-heading">4. Gallery Page — gallery.html</div>
+  <p>Responsive image gallery with filter tabs (All, Interior, Exterior, Commercial, Home Decor), hover zoom/overlay effects, and lightbox for full-size image viewing.</p>
+
+  <div class="module-heading">5. About Us — about.html</div>
+  <p>Company history, mission &amp; vision, team introduction, achievements, and reasons to choose BrightWorld.</p>
+
+  <div class="module-heading">6. Feedback Page — feedback.html</div>
+  <p>Customer feedback form: Name, Email, Phone, Product Category, Star Rating (1–5), Comments field, Submit button.</p>
+
+  <div class="module-heading">7. Contact Us — contact.html</div>
+  <p>Physical store address, map section, phone numbers, email, store hours (Mon–Sat: 9 AM – 10 PM), and direct contact form.</p>
+
+  <div class="module-heading">8. Queries &amp; FAQ — queries.html</div>
+  <p>Accordion-style frequently asked questions and a query submission form for customer support.</p>
+
+  <div class="module-heading">9. Sitemap — sitemap.html</div>
+  <p>Visual HTML sitemap showing complete website page hierarchy for easy navigation reference.</p>
+
+  <div class="module-heading">10. Downloads — download.html</div>
+  <p>Four downloadable documents: Price List, Product Catalogue, Technical Specifications, and Warranty Guide.</p>
+
+  <div class="module-heading">11. Cart — cart.html</div>
+  <p>Shopping cart with item display, quantity management, price calculation, and LocalStorage-based persistence.</p>
+
+  <div class="page-num">— 10 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 11 — TECHNOLOGY STACK
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Technology Stack</div>
+
+  <table class="req-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Technology / Tool</th>
+        <th>Version / Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Markup Language</td><td>HTML5</td><td>Semantic elements, SEO meta tags, ARIA labels</td></tr>
+      <tr><td>Stylesheet</td><td>CSS3</td><td>Custom Properties, Glassmorphism, Animations, Grid &amp; Flexbox</td></tr>
+      <tr><td>Scripting Language</td><td>JavaScript (ES6+)</td><td>Vanilla JS, Strict Mode, LocalStorage API, IntersectionObserver</td></tr>
+      <tr><td>CSS Framework</td><td>Bootstrap</td><td>Version 5.3.3 (loaded via CDN)</td></tr>
+      <tr><td>Icon Library</td><td>Bootstrap Icons</td><td>Version 1.11.3 (loaded via CDN)</td></tr>
+      <tr><td>Scroll Animations</td><td>AOS — Animate On Scroll</td><td>Version 2.3.4 (loaded via CDN)</td></tr>
+      <tr><td>Typography</td><td>Google Fonts</td><td>Inter · Poppins · Montserrat</td></tr>
+      <tr><td>State Management</td><td>LocalStorage (Browser API)</td><td>Cart items, Theme preference persistence</td></tr>
+      <tr><td>Development Tool</td><td>Visual Studio Code</td><td>Code editor with Live Server extension</td></tr>
+      <tr><td>Browser Testing</td><td>Google Chrome</td><td>Chrome DevTools for responsive testing</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-heading">Project Statistics</div>
+  <table class="req-table">
+    <thead><tr><th>File</th><th>Size</th><th>Lines of Code</th></tr></thead>
+    <tbody>
+      <tr><td>index.html (Home Page)</td><td>67 KB</td><td>1,235 lines</td></tr>
+      <tr><td>products.html</td><td>46 KB</td><td>672 lines</td></tr>
+      <tr><td>css/style.css</td><td>39 KB</td><td>1,400+ lines</td></tr>
+      <tr><td>js/script.js</td><td>16 KB</td><td>454 lines</td></tr>
+      <tr><td>Total HTML Pages</td><td>—</td><td>11 pages</td></tr>
+      <tr><td>Total Project Size</td><td>~19 MB (with images)</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-heading">File Structure</div>
+  <div class="code-box">BrightWorld/
+├── index.html          ← Home Page
+├── products.html       ← Products Listing
+├── brands.html         ← Brands Showcase
+├── gallery.html        ← Image Gallery
+├── about.html          ← About Us
+├── feedback.html       ← Feedback Form
+├── contact.html        ← Contact & Location
+├── queries.html        ← FAQs & Queries
+├── sitemap.html        ← Site Map
+├── download.html       ← Downloads
+├── cart.html           ← Shopping Cart
+├── css/
+│   └── style.css       ← Main Stylesheet (1400+ lines)
+├── js/
+│   └── script.js       ← Main JavaScript (454 lines)
+├── assets/img/
+│   ├── BULBS/
+│   ├── SPOT LIGHTS/
+│   ├── Gallery/
+│   └── Home/
+└── downloads/
+    ├── BrightWorld-Price-List.html
+    ├── BrightWorld-Product-Catalogue.html
+    ├── BrightWorld-Technical-Specs.html
+    └── BrightWorld-Warranty-Guide.html</div>
+
+  <div class="page-num">— 11 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 12 — DESIGN SYSTEM & FEATURES
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Design System &amp; Features</div>
+
+  <div class="sub-heading">Color Palette</div>
+  <table class="req-table">
+    <thead><tr><th>Variable</th><th>Color Code</th><th>Usage</th></tr></thead>
+    <tbody>
+      <tr><td>--primary</td><td>#0a84ff</td><td>Buttons, links, active states, glow effects</td></tr>
+      <tr><td>--accent</td><td>#f5c518</td><td>Highlights, badges, star ratings, CTA text</td></tr>
+      <tr><td>--dark</td><td>#0d0f1a</td><td>Dark mode page background</td></tr>
+      <tr><td>--dark-card</td><td>#1a1d30</td><td>Card and component backgrounds</td></tr>
+      <tr><td>--text-main</td><td>#f0f4ff</td><td>Primary text in dark mode</td></tr>
+      <tr><td>--glass-bg</td><td>rgba(255,255,255,0.06)</td><td>Glassmorphism card backgrounds</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-heading">Typography</div>
+  <table class="req-table">
+    <thead><tr><th>Font Family</th><th>Weights</th><th>Applied To</th></tr></thead>
+    <tbody>
+      <tr><td>Inter</td><td>300–900</td><td>Body text, paragraphs, UI labels, prices</td></tr>
+      <tr><td>Poppins</td><td>300–900</td><td>Section headings, page titles</td></tr>
+      <tr><td>Montserrat</td><td>400–900</td><td>Brand name, logo text, hero headlines</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub-heading">Key Features Implemented</div>
+  <ul>
+    <li><strong>Dark / Light Mode Toggle</strong> — Theme preference saved in browser LocalStorage across sessions.</li>
+    <li><strong>Loading Screen</strong> — Animated BrightWorld logo loader shown on every page (1.8 seconds).</li>
+    <li><strong>Sticky Navbar</strong> — Navbar compacts with backdrop blur effect after 60px scroll.</li>
+    <li><strong>Hero Carousel</strong> — 4 auto-rotating full-screen slides with gradient LED themes.</li>
+    <li><strong>Animated Counters</strong> — Stats (10K+ Customers etc.) count up when scrolled into viewport.</li>
+    <li><strong>Real-time Product Search</strong> — Results filter instantly as user types in the search box.</li>
+    <li><strong>Category Filter</strong> — Single-click filter buttons to show/hide products by category.</li>
+    <li><strong>Product Sort</strong> — Sort by Price (Low→High / High→Low) or Name (A→Z / Z→A).</li>
+    <li><strong>Shopping Cart</strong> — Add/remove items, quantity management, LocalStorage persistence.</li>
+    <li><strong>URL Deep Linking</strong> — Direct URL filter support: products.html?filter=bulbs</li>
+    <li><strong>AOS Animations</strong> — Scroll-triggered animations (700ms, ease-out-cubic).</li>
+    <li><strong>Mobile Responsive</strong> — Bootstrap 5 grid + offcanvas menu for screens below 992px.</li>
+    <li><strong>Scroll-to-Top Button</strong> — Floating button appears after 300px scroll.</li>
+  </ul>
+
+  <div class="page-num">— 12 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 13 — SOURCE CODE
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Source Code</div>
+
+  <div class="sub-heading">HTML — Navigation Bar (index.html)</div>
+  <span class="file-label">index.html — Navbar</span>
+  <div class="code-box">&lt;nav class="navbar navbar-expand-lg sticky-top" id="mainNav"&gt;
+  &lt;div class="container"&gt;
+    &lt;a class="navbar-brand d-flex align-items-center" href="index.html"&gt;
+      &lt;div class="logo-icon"&gt;
+        &lt;i class="bi bi-lightbulb-fill text-white"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+      Bright&lt;span class="brand-world"&gt;World&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav mx-auto gap-1"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item dropdown"&gt;
+          &lt;a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"&gt;
+            Shop
+          &lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="products.html"&gt;Products&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="brands.html"&gt;Brands&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="gallery.html"&gt;Gallery&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="download.html"&gt;Downloads&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;a href="cart.html" class="btn-primary-grad btn btn-sm px-3 py-2"&gt;
+        &lt;i class="bi bi-cart3"&gt;&lt;/i&gt; Cart
+        &lt;span class="badge bg-warning" id="cart-count"&gt;0&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</div>
+
+  <div class="sub-heading">CSS — CSS Custom Properties (style.css)</div>
+  <span class="file-label">css/style.css — Root Variables</span>
+  <div class="code-box">:root {
+  --primary:       #0a84ff;
+  --primary-dark:  #005ecb;
+  --accent:        #f5c518;
+  --dark:          #0d0f1a;
+  --dark-card:     #1a1d30;
+  --surface:       #1e2238;
+  --text-main:     #f0f4ff;
+  --text-muted:    #8892b0;
+  --glass-bg:      rgba(255,255,255,0.06);
+  --glass-border:  rgba(255,255,255,0.12);
+  --shadow-blue:   0 8px 32px rgba(10,132,255,0.25);
+  --radius-md:     14px;
+  --transition:    all 0.35s cubic-bezier(0.4,0,0.2,1);
+  --font-main:     'Inter', sans-serif;
+  --font-heading:  'Poppins', sans-serif;
+  --font-brand:    'Montserrat', sans-serif;
+}
+
+[data-theme="light"] {
+  --dark:          #f0f4ff;
+  --dark-card:     #ffffff;
+  --text-main:     #0d0f1a;
+  --text-muted:    #4a5568;
+  --nav-bg:        rgba(240,244,255,0.97);
+}</div>
+
+  <div class="page-num">— 13 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 14 — SOURCE CODE (Continued)
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Source Code (Continued)</div>
+
+  <div class="sub-heading">JavaScript — Dark/Light Mode Toggle (script.js)</div>
+  <span class="file-label">js/script.js — Theme Toggle</span>
+  <div class="code-box">/* Dark / Light Mode Toggle */
+const darkToggleBtn  = document.getElementById('dark-toggle');
+const currentTheme   = localStorage.getItem('bw-theme') || 'dark';
+document.documentElement.setAttribute('data-theme', currentTheme);
+updateToggleIcon(currentTheme);
+
+if (darkToggleBtn) {
+  darkToggleBtn.addEventListener('click', () => {
+    const theme = document.documentElement
+      .getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('bw-theme', theme);
+    updateToggleIcon(theme);
+  });
+}
+
+function updateToggleIcon(theme) {
+  if (!darkToggleBtn) return;
+  darkToggleBtn.innerHTML = theme === 'dark'
+    ? '&lt;i class="bi bi-sun-fill"&gt;&lt;/i&gt;'
+    : '&lt;i class="bi bi-moon-fill"&gt;&lt;/i&gt;';
+}</div>
+
+  <div class="sub-heading">JavaScript — Product Filter System (script.js)</div>
+  <span class="file-label">js/script.js — Product Filter</span>
+  <div class="code-box">/* Product Category Filter */
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    const items  = document.querySelectorAll('.filter-item');
+    items.forEach(item => {
+      const show = filter === 'all' || item.dataset.category === filter;
+      item.style.display = show ? '' : 'none';
+      if (show) { item.style.animation = 'fadeIn 0.4s ease'; }
+    });
+  });
+});
+
+/* Real-time Product Search */
+const productSearch = document.getElementById('product-search');
+if (productSearch) {
+  productSearch.addEventListener('input', () => {
+    const q = productSearch.value.toLowerCase().trim();
+    document.querySelectorAll('.filter-item').forEach(item => {
+      const name = (item.querySelector('.product-name')
+        ?.textContent || '').toLowerCase();
+      item.style.display = name.includes(q) ? '' : 'none';
+    });
+  });
+}</div>
+
+  <div class="sub-heading">JavaScript — Shopping Cart (script.js)</div>
+  <span class="file-label">js/script.js — Cart System</span>
+  <div class="code-box">/* Cart System */
+let cart = JSON.parse(localStorage.getItem('bw-cart') || '[]');
+
+function updateCartCount() {
+  const badge = document.getElementById('cart-count');
+  if (badge) badge.textContent = cart.reduce((s, i) => s + i.qty, 0);
+}
+updateCartCount();
+
+function addToCart(name, price, brand) {
+  const existing = cart.find(i => i.name === name);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price, brand, qty: 1 });
+  }
+  localStorage.setItem('bw-cart', JSON.stringify(cart));
+  updateCartCount();
+}</div>
+
+  <div class="page-num">— 14 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 15 — TESTING & RESULTS
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Testing &amp; Results</div>
+
+  <p>
+    The BrightWorld website has been thoroughly tested across multiple browsers, screen sizes, and functional scenarios. The following table summarizes the testing results:
+  </p>
+
+  <table class="req-table">
+    <thead>
+      <tr>
+        <th style="width:5%;">#</th>
+        <th style="width:40%;">Test Case</th>
+        <th style="width:35%;">Expected Result</th>
+        <th style="width:20%;">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>All 11 pages load without errors</td><td>Pages load correctly in browser</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>2</td><td>Navbar dropdown menus open/close</td><td>Dropdowns show on click</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>3</td><td>Mobile offcanvas menu works</td><td>Side menu opens on small screens</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>4</td><td>Dark / Light mode toggle</td><td>Theme switches correctly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>5</td><td>Theme saved after page refresh</td><td>Same theme on reload</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>6</td><td>Hero carousel auto-rotates</td><td>Slides change every 5 seconds</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>7</td><td>Product category filter buttons</td><td>Shows only selected category</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>8</td><td>Real-time product search</td><td>Filters results as user types</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>9</td><td>Product sort (price / name)</td><td>Products reorder correctly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>10</td><td>Add to Cart button</td><td>Item added to cart</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>11</td><td>Cart count badge updates</td><td>Badge shows correct count</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>12</td><td>Cart persists after refresh</td><td>Items still in cart after reload</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>13</td><td>Feedback form renders</td><td>Form fields display correctly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>14</td><td>Download links work</td><td>Documents open on click</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>15</td><td>Gallery images display</td><td>Images load with hover effects</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>16</td><td>AOS animations on scroll</td><td>Elements animate in smoothly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>17</td><td>Animated stats counters</td><td>Numbers count up on scroll</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>18</td><td>Responsive on mobile (375px)</td><td>Layout adapts correctly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>19</td><td>Responsive on tablet (768px)</td><td>Layout adapts correctly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>20</td><td>URL parameter filter works</td><td>products.html?filter=bulbs works</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>21</td><td>Brand URL filter works</td><td>products.html?brand=Philips works</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>22</td><td>Footer navigation links</td><td>All footer links navigate correctly</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>23</td><td>Contact page information</td><td>Phone, email, hours correct</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>24</td><td>Scroll-to-top button</td><td>Button appears, scrolls to top</td><td class="done-badge">✓ Pass</td></tr>
+      <tr><td>25</td><td>Cross-browser compatibility</td><td>Works in Chrome, Edge, Firefox</td><td class="done-badge">✓ Pass</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:12px;">
+    <strong>Testing Summary: 25 out of 25 test cases passed. No critical bugs found.</strong>
+  </p>
+
+  <div class="page-num">— 15 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PAGE 16 — CONCLUSION
+══════════════════════════════════════════ -->
+<div class="page">
+
+  <div class="page-header-bar"><span class="ph-title">Aptech HDSE E-Project Documentation</span><span class="ph-brand">BrightWorld LED Lights</span></div>
+
+  <div class="section-heading">Conclusion</div>
+
+  <p>
+    The <strong>BrightWorld LED Lights Website</strong> has been successfully designed, developed, tested, and documented as a complete E-Project submission for Aptech Computer Education's HDSE Semester III program. This project represents a comprehensive, fully functional, and professionally crafted web-based solution that fulfills all 10 client requirements as specified in the project brief.
+  </p>
+
+  <p>
+    The website serves as a complete digital storefront for the BrightWorld LED store, providing customers with a seamless online experience to browse over multiple product categories, explore top LED brands, view specifications and pricing, access store information, submit feedback, and download product documentation — all through an elegantly designed and fully responsive web interface.
+  </p>
+
+  <p>
+    From a technical standpoint, the project demonstrates strong proficiency in modern web development technologies including <strong>HTML5, CSS3, JavaScript (ES6+), Bootstrap 5, AOS Animations, Google Fonts,</strong> and browser-based LocalStorage API. The implementation of features such as real-time search, dynamic product filtering, animated counters, a persistent shopping cart, and a Dark/Light mode toggle reflects a high standard of practical web development skill.
+  </p>
+
+  <p>
+    The project also highlights the importance of user experience design — with glassmorphism effects, smooth animations, hover interactions, and a premium dark-mode aesthetic that creates a visually impressive and engaging digital presence for the BrightWorld brand.
+  </p>
+
+  <p>
+    Through this project, our team gained invaluable hands-on experience in:
+  </p>
+
+  <ul>
+    <li>Translating client requirements into a fully functional and deployable web application.</li>
+    <li>Implementing responsive design principles for cross-device compatibility.</li>
+    <li>Applying JavaScript for dynamic UI interactions, state management, and data persistence.</li>
+    <li>Working collaboratively as a team with clear task delegation and coordination.</li>
+    <li>Writing professional project documentation following academic and industry standards.</li>
+  </ul>
+
+  <p>
+    In conclusion, the BrightWorld E-Project not only meets all defined requirements but goes beyond the minimum specifications to deliver a premium-quality product. It bridges the gap between academic learning and professional web development practice, and we are confident it stands as a strong representation of our skills and dedication.
+  </p>
+
+  <p>
+    We look forward to the evaluation and feedback from the E-Projects Team at Aptech and remain committed to learning, growing, and applying our knowledge in future endeavors.
+  </p>
+
+  <hr />
+
+  <p style="text-align:center; font-weight:bold; font-size:12pt; margin-top:20px;">
+    — Thank You —
+  </p>
+
+  <p style="text-align:center; font-size:11pt; margin-top:10px;">
+    MR. HUSSNAIN AHMED &nbsp;|&nbsp; MR. MUHAMMAD ALI &nbsp;|&nbsp; MR. AHMED RAZA &nbsp;|&nbsp; MR. USMAN TARIQ
+  </p>
+  <p style="text-align:center; font-size:10pt; font-style:italic; color:#555;">
+    HDSE Semester III — E-Project &nbsp;|&nbsp; Aptech Computer Education &nbsp;|&nbsp; July 2026
+  </p>
+
+  <div class="page-num">— 16 —</div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     PRINT BUTTON
+══════════════════════════════════════════ -->
+<button class="print-btn no-print" onclick="window.print()">
+  🖨️ Save as PDF
+</button>
+
+<script>
+  window.onbeforeprint = () => {
+    document.querySelector('.print-btn').style.display = 'none';
+  };
+  window.onafterprint = () => {
+    document.querySelector('.print-btn').style.display = 'block';
+  };
+</script>
+
+</body>
+</html>
